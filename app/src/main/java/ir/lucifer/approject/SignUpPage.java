@@ -78,7 +78,7 @@ public class SignUpPage extends AppCompatActivity {
                     JsonObject obj = response.body();
                     Controler.Token = obj.get("token").getAsString();
                     Controler.isLogin = true;
-                    startActivity(new Intent(MainActivity.activity , HomePage.class));
+                    startActivity(new Intent(MainActivity.activity , SearchViewPage.class));
 
                 }
                 else {

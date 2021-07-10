@@ -12,16 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ApProject"
         android:usesCleartextTraffic="true">
-        <activity android:name=".HomePage"></activity>
+        <activity android:name=".SearchViewPage"></activity>
+        <activity android:name=".HomePage" />
         <activity android:name=".SignUpPage" />
         <activity android:name=".LoginPage" />
         <activity
             android:name=".ui.login.LoginActivity"
             android:label="@string/title_activity_login" />
-        <activity
-            android:name=".SearchView"
-            android:label="@string/title_activity_search_view"
-            android:theme="@style/Theme.ApProject.NoActionBar" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

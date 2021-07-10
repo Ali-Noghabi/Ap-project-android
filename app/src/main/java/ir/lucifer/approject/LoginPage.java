@@ -64,7 +64,7 @@ public class LoginPage extends AppCompatActivity {
                     {
                         Controler.Token = obj.get("token").getAsString();
                         Controler.isLogin = true;
-                        startActivity(new Intent(MainActivity.activity , HomePage.class));
+                        startActivity(new Intent(MainActivity.activity , SearchViewPage.class));
                         Toast.makeText(getApplicationContext(), "Login :)", Toast.LENGTH_SHORT).show();
                     }
                     else {
