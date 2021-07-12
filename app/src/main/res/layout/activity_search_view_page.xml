@@ -10,23 +10,7 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="45dp"
         android:layout_height="158dp"
-        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
-
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="100dp"
-            android:background="@drawable/ic_search_black_24dp"/>
-
-
-        <Button
-            android:layout_width=""
-            android:layout_height=""/>
-
-
-
-    </androidx.core.widget.NestedScrollView>
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"/>
 
     <com.google.android.material.appbar.AppBarLayout
         android:theme="@style/ThemeOverlay.MaterialComponents"
