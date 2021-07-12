@@ -2,6 +2,7 @@ package ir.lucifer.approject;
 
 import com.google.gson.JsonObject;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -13,7 +14,7 @@ public interface MainAPI {
 
 
     @GET("getProducts")
-    Call<List<Product>> getProductList ();
+    Call<ArrayList<Product>> getProductList ();
 
     @POST("login")
     Call<JsonObject> getLoginInfo(@Body JsonObject Input);

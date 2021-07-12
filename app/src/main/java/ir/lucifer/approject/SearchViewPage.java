@@ -5,50 +5,38 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.View;
-import android.widget.Adapter;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.List;
+
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class SearchViewPage extends AppCompatActivity {
 
+    public MainAPI mainAPI;
+    public RecyclerView recyclerView ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_view_page);
 
-//        String list[] = {"item1" , "item2","item3" , "item4"};
-        ArrayList<Product> list = new ArrayList<>();
-        list.add(new Product("laptop" , "2000"));
-        list.add(new Product("car" , "1000"));
-        list.add(new Product("pc" , "500"));
-        list.add(new Product("plant" , "100"));
-        list.add(new Product("mamad" , "moft"));
-        list.add(new Product("mamad" , "moft"));
-        list.add(new Product("gg" , "asdas"));
-        list.add(new Product("mamad" , "moft"));
-        list.add(new Product("mamad" , "moft"));
-        list.add(new Product("mamad" , "moft"));
-        list.add(new Product("mamad" , "moft"));
-        list.add(new Product("mamad" , "moft"));
-        list.add(new Product("mamad" , "moft"));
-        list.add(new Product("mamad" , "moft"));
-        list.add(new Product("mamad" , "moft"));
-        list.add(new Product("mamad" , "moft"));
-        list.add(new Product("mamad" , "moft"));
-        RecyclerView recyclerView = findViewById(R.id.RecyclerViewSVP);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        Retrofit test2 = new Retrofit.Builder().baseUrl(Controler.url)
+                .addConverterFactory(GsonConverterFactory.create()).build();
 
-        MyRecyclerViewAdapter myRecyclerViewAdapter = new MyRecyclerViewAdapter(this,list);
-        recyclerView.setAdapter(myRecyclerViewAdapter);
+        mainAPI = test2.create(MainAPI.class);
 
+
+        UpdateProductsList();
 
     }
 
@@ -56,5 +44,41 @@ public class SearchViewPage extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.search_viewpage_menu, menu);
         return true;
+    }
+    public Context getContext() {
+        return this;
+    }
+
+    private void UpdateProductsList() {
+        Call<ArrayList<Product>> call = mainAPI.getProductList();
+
+
+
+        call.enqueue(new Callback<ArrayList<Product>>() {
+            @Override
+            public void onResponse(Call<ArrayList<Product>> call, Response<ArrayList<Product>> response) {
+
+                if (response.isSuccessful()) {
+                    ArrayList<Product> products;
+                    products = response.body();
+                    recyclerView = findViewById(R.id.RecyclerViewSVP);
+                    recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+
+
+                    MyRecyclerViewAdapter myRecyclerViewAdapter = new MyRecyclerViewAdapter(getApplicationContext(),products);
+                    recyclerView.setAdapter(myRecyclerViewAdapter);
+
+
+                } else {
+                    Toast.makeText(getApplicationContext(), "Error " + response.code(), Toast.LENGTH_SHORT).show();
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<ArrayList<Product>> call, Throwable t) {
+                Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
