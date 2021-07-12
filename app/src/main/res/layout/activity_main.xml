@@ -70,12 +70,12 @@
         android:text="Forget password?"
         android:textColorLink="#2B0933"
         android:textSize="12sp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/LoginButtonMainPage"
         app:layout_constraintEnd_toEndOf="@+id/editTextPassword"
         app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/LoginButtonMainPage"
         android:layout_width="210dp"
         android:layout_height="40dp"
         android:layout_marginBottom="48dp"

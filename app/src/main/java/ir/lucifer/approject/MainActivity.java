@@ -6,6 +6,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import retrofit2.Retrofit;
@@ -15,33 +16,25 @@ public class MainActivity extends AppCompatActivity {
 
     public MainAPI mainAPI;
 //    Button singin;
-    TextView signup;
-    TextView signinText;
+    Button LoginButtonMainPage;
     public static Activity activity;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         activity = this;
-//        singin = findViewById(R.id.signin);
-        signup = findViewById(R.id.signup);
-        signinText = findViewById(R.id.signin);
+
+        LoginButtonMainPage = findViewById(R.id.LoginButtonMainPage);
+
         Retrofit test2 = new Retrofit.Builder().baseUrl(Controler.url)
                 .addConverterFactory(GsonConverterFactory.create()).build();
 
         mainAPI = test2.create(MainAPI.class);
 
-
-        signup.setOnClickListener(new View.OnClickListener() {
+        LoginButtonMainPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(activity , SignUpPage.class));
-            }
-        });
-        signinText.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(activity, LoginPage.class));
+                startActivity(new Intent(activity, SearchViewPage.class));
             }
         });
 //        singin.setOnClickListener(new View.OnClickListener() {
