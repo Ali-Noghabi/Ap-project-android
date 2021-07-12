@@ -16,6 +16,11 @@ public class Product {
 
     public Product() {
     }
+    public Product(String subject , String price)
+    {
+        this.subject = subject;
+        this.price = price;
+    }
     public Product(boolean lol)
     {
 

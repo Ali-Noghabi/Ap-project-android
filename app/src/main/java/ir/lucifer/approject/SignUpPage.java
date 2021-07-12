@@ -78,7 +78,8 @@ public class SignUpPage extends AppCompatActivity {
                     JsonObject obj = response.body();
                     Controler.Token = obj.get("token").getAsString();
                     Controler.isLogin = true;
-                    startActivity(new Intent(MainActivity.activity , SearchViewPage.class));
+                    startActivity(new Intent(MainActivity.activity , MainActivity.class));
+                    Toast.makeText(getApplicationContext() , "Welcome Now please login " , Toast.LENGTH_SHORT).show();
 
                 }
                 else {

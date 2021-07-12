@@ -9,7 +9,7 @@
 
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
+        android:id="@+id/signupButtonMA"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -35,7 +35,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextEmail"
+        android:id="@+id/emailEditTextMA"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
@@ -49,7 +49,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewlogin" />
 
     <EditText
-        android:id="@+id/editTextPassword"
+        android:id="@+id/passwordEditTextMA"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -59,7 +59,7 @@
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/emailEditTextMA" />
 
     <TextView
         android:id="@+id/textViewforgetpass"
@@ -70,25 +70,25 @@
         android:text="Forget password?"
         android:textColorLink="#2B0933"
         android:textSize="12sp"
-        app:layout_constraintBottom_toTopOf="@+id/LoginButtonMainPage"
-        app:layout_constraintEnd_toEndOf="@+id/editTextPassword"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
+        app:layout_constraintBottom_toTopOf="@+id/LoginButtonMA"
+        app:layout_constraintEnd_toEndOf="@+id/passwordEditTextMA"
+        app:layout_constraintTop_toBottomOf="@+id/passwordEditTextMA" />
 
     <Button
-        android:id="@+id/LoginButtonMainPage"
+        android:id="@+id/LoginButtonMA"
         android:layout_width="210dp"
-        android:layout_height="40dp"
+        android:layout_height="45dp"
         android:layout_marginBottom="48dp"
         android:background="@drawable/loginbutton"
         android:text="LOGIN"
-        android:textColor="#7736DF"
+        android:textColor="#946AD8"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textViewsignup"
+        android:id="@+id/signupTextViewMA"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="200dp"

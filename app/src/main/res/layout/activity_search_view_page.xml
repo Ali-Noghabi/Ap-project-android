@@ -8,24 +8,33 @@
     android:visibility="visible"
     tools:context=".SearchViewPage">
 
-
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="3000dp"
+        android:layout_height="match_parent"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
-        <Button
-            android:id="@+id/button2"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/RecyclerViewSVP"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="92dp" />
+        </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="#E1BEE7"
         android:theme="@style/ThemeOverlay.MaterialComponents"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:liftOnScroll="true">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
@@ -50,8 +59,7 @@
                 android:layout_height="?attr/actionBarSize"
                 android:visibility="visible"
                 app:layout_collapseMode="pin"
-                app:popupTheme="@style/Theme.ApProject.PopupOverlay"
-                />
+                app:popupTheme="@style/Theme.ApProject.PopupOverlay" />
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
