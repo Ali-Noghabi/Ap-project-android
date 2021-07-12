@@ -2,47 +2,58 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/search_toolbar"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:visibility="visible"
     tools:context=".SearchViewPage">
 
 
     <androidx.core.widget.NestedScrollView
-        android:layout_width="45dp"
-        android:layout_height="158dp"
-        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"/>
+        android:layout_width="match_parent"
+        android:layout_height="3000dp"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Button" />
+    </androidx.core.widget.NestedScrollView>
 
     <com.google.android.material.appbar.AppBarLayout
-        android:theme="@style/ThemeOverlay.MaterialComponents"
-        android:backgroundTint="#E1BEE7"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="#E1BEE7"
+        android:theme="@style/ThemeOverlay.MaterialComponents"
         app:liftOnScroll="true">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:contentScrim="#E1BEE7"
             app:expandedTitleGravity="bottom"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
-            app:contentScrim="#E1BEE7"
             app:scrimAnimationDuration="300">
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="230dp"
-                android:src="@drawable/searchactivity"
                 android:scaleType="centerCrop"
+                android:src="@drawable/searchactivity"
                 app:layout_collapseMode="parallax"
-                app:layout_collapseParallaxMultiplier="1"/>
+                app:layout_collapseParallaxMultiplier="1" />
 
             <androidx.appcompat.widget.Toolbar
-                android:id="@+id/search_toolbar"
+                android:id="@+id/search_toolbar2"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                app:layout_collapseMode="pin"/>
+                android:visibility="visible"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/Theme.ApProject.PopupOverlay"
+                />
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
-
 
 
     </com.google.android.material.appbar.AppBarLayout>

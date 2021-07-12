@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:context="ir.lucifer.approject.SearchViewPage"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <item
-        android:id="@+id/app_bar_search"
+        android:id="@+id/SearchItemSVP"
         android:icon="@drawable/ic_search_black_24dp"
         android:title="Search"
-        app:actionViewClass="android.widget.SearchView"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
         app:showAsAction="always" />
-    <item android:title="help" />
-    <item android:title="Log out" />
+    <item
+        android:id="@+id/helpItemSVP"
+        android:title="help" />
+    <item
+        android:id="@+id/LogOutItemSVP"
+        android:title="Log out" />
 </menu>
