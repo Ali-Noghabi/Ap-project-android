@@ -12,9 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ApProject"
         android:usesCleartextTraffic="true">
+        <activity android:name=".ProductPage"></activity>
         <activity
             android:name=".SearchViewPage"
-            android:theme="@style/Theme.AppCompat.Light"></activity>
+            android:theme="@style/Theme.AppCompat.Light" />
         <activity android:name=".HomePage" />
         <activity android:name=".SignUpPage" />
         <activity android:name=".LoginPage" />

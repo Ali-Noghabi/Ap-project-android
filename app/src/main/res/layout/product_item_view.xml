@@ -1,13 +1,16 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="160dp"
-    android:layout_margin="10dp"
-    android:background="#E6E4E4"
-    android:orientation="vertical">
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="20dp"
+    android:layout_marginStart="15dp"
+    android:layout_marginEnd="15dp"
+    app:cardElevation="15dp">
 
-    <FrameLayout
+
+<FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#E3DDDD"
@@ -20,7 +23,7 @@
 
             <ImageView
                 android:id="@+id/ImageViewPIV"
-                android:layout_width="105dp"
+                android:layout_width="111dp"
                 android:layout_height="match_parent"
                 tools:srcCompat="@drawable/loginbutton" />
 
@@ -34,6 +37,7 @@
                     android:id="@+id/SubjectPIV"
                     android:layout_width="match_parent"
                     android:layout_height="112dp"
+                    android:layout_marginBottom="10dp"
                     android:text="Subject"
                     android:textSize="20sp" />
 
@@ -44,9 +48,10 @@
                     android:text="Price"
                     android:textSize="20sp" />
 
+
             </LinearLayout>
         </LinearLayout>
     </FrameLayout>
 
 
-</LinearLayout>
+</androidx.cardview.widget.CardView >

@@ -53,7 +53,6 @@ public class SearchViewPage extends AppCompatActivity {
         Call<ArrayList<Product>> call = mainAPI.getProductList();
 
 
-
         call.enqueue(new Callback<ArrayList<Product>>() {
             @Override
             public void onResponse(Call<ArrayList<Product>> call, Response<ArrayList<Product>> response) {
