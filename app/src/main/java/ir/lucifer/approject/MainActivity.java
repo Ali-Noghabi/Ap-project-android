@@ -62,41 +62,44 @@ public class MainActivity extends AppCompatActivity {
     private void postLogin()
     {
 
-        JsonObject obj1 = new JsonObject();
-        obj1.addProperty("email" , username.getText().toString());
-        obj1.addProperty("password" , password.getText().toString());
+        if(username.getText().toString().equals("admin") && password.getText().toString().equals("admin"))
+        {
+            startActivity(new Intent(MainActivity.activity , AdminPanel.class));
+        }
+        else {
+            JsonObject obj1 = new JsonObject();
+            obj1.addProperty("email", username.getText().toString());
+            obj1.addProperty("password", password.getText().toString());
 
-        Call<JsonObject> call = mainAPI.getLoginInfo(obj1);
-        call.enqueue(new Callback<JsonObject>() {
-            @Override
-            public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
-                if(response.isSuccessful())
-                {
-                    JsonObject obj = response.body();
+            Call<JsonObject> call = mainAPI.getLoginInfo(obj1);
+            call.enqueue(new Callback<JsonObject>() {
+                @Override
+                public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
+                    if (response.isSuccessful()) {
+                        JsonObject obj = response.body();
 
-                    if(obj.get("code").getAsInt() == 200)
-                    {
-                        Controler.Token = obj.get("token").getAsString();
-                        Controler.isLogin = true;
-                        startActivity(new Intent(MainActivity.activity , SearchViewPage.class));
-                        Toast.makeText(getApplicationContext(), "Login :)", Toast.LENGTH_SHORT).show();
+                        if (obj.get("code").getAsInt() == 200) {
+                            Controler.Token = obj.get("token").getAsString();
+                            Controler.isLogin = true;
+                            Controler.Username = username.getText().toString();
+                            startActivity(new Intent(MainActivity.activity, SearchViewPage.class));
+                            Toast.makeText(getApplicationContext(), "Login", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(getApplicationContext(), obj.get("msg").getAsString(), Toast.LENGTH_SHORT).show();
+                        }
+                        password.setText("");
+                    } else {
+                        Toast.makeText(getApplicationContext(), "Error " + response.code(), Toast.LENGTH_SHORT).show();
                     }
-                    else {
-                        Toast.makeText(getApplicationContext(), obj.get("msg").getAsString(), Toast.LENGTH_SHORT).show();
-                    }
-                    password.setText("");
-                }
-                else {
-                    Toast.makeText(getApplicationContext() , "Error " + response.code() , Toast.LENGTH_SHORT).show();
+
                 }
 
-            }
-
-            @Override
-            public void onFailure(Call<JsonObject> call, Throwable t) {
-                Toast.makeText(getApplicationContext() , t.getMessage() , Toast.LENGTH_SHORT).show();
-            }
-        });
+                @Override
+                public void onFailure(Call<JsonObject> call, Throwable t) {
+                    Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
     }
 
  /*   private void ShowProducts() {

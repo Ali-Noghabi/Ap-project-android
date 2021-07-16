@@ -12,7 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ApProject"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ProductPage"></activity>
+        <activity android:name=".AdminPanelShow"></activity>
+        <activity android:name=".AdminPanel" />
+        <activity android:name=".ProductPage" />
         <activity
             android:name=".SearchViewPage"
             android:theme="@style/Theme.AppCompat.Light" />

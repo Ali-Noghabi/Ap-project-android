@@ -10,10 +10,4 @@
         android:title="Search"
         app:actionViewClass="androidx.appcompat.widget.SearchView"
         app:showAsAction="always" />
-    <item
-        android:id="@+id/helpItemSVP"
-        android:title="help" />
-    <item
-        android:id="@+id/LogOutItemSVP"
-        android:title="Log out" />
 </menu>

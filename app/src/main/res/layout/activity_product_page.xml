@@ -10,8 +10,9 @@
 
 
     <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="610dp"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
 
@@ -26,16 +27,6 @@
                 android:layout_height="300dp"
                 android:background="@color/black" />
 
-            <TextView
-                android:id="@+id/category"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp"
-                android:background="@color/purple_500"
-                android:text="category" />
-
 
             <TextView
                 android:id="@+id/productname"
@@ -44,7 +35,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="20dp"
-                android:background="@color/purple_500"
+                android:background="@color/white"
                 android:text="product name:" />
 
             <TextView
@@ -52,7 +43,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
-                android:background="@color/purple_500"
+                android:background="@color/white"
                 android:text="price:" />
 
 
@@ -70,7 +61,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:background="@color/purple_700"
+                android:background="@color/white"
                 android:text="description:"
                 android:textSize="15dp" />
 
@@ -83,7 +74,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="20dp"
-                android:background="@color/purple_700" />
+                android:background="@color/white" />
 
             <TextView
                 android:id="@+id/phonenumber"
@@ -91,7 +82,7 @@
                 android:layout_height="30dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginBottom="10dp"
-                android:background="#813838"
+                android:background="#FFFFFF"
 
                 android:inputType="phone"
                 android:text="phonenumber" />
@@ -103,7 +94,9 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        app:layout_anchor="@+id/nestedScrollView"
+        app:layout_anchorGravity="center">
 
         <Button
             android:id="@+id/addproductbutton"
