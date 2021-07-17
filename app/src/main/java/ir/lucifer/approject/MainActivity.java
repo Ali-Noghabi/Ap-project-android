@@ -33,6 +33,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         activity = this;
 
+//        getSupportActionBar().setIcon(R.drawable.my_icon);
+//        getSupportActionBar().setHomeButtonEnabled(true);
+
+
         username = findViewById(R.id.emailEditTextMA);
         password = findViewById(R.id.passwordEditTextMA);
         LoginButtonMainPage = findViewById(R.id.LoginButtonMA);
