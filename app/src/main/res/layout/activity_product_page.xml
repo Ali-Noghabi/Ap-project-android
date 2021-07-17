@@ -98,6 +98,8 @@
         app:layout_anchor="@+id/nestedScrollView"
         app:layout_anchorGravity="center">
 
+
+
         <Button
             android:id="@+id/addproductbutton"
             android:layout_width="match_parent"

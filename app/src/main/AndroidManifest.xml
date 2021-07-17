@@ -12,7 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ApProject"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ProductPage"></activity>
+        <activity android:name=".AddProduct"></activity>
+        <activity android:name=".UserActivities" />
+        <activity android:name=".ProductPage" />
         <activity
             android:name=".SearchViewPage"
             android:theme="@style/Theme.AppCompat.Light" />

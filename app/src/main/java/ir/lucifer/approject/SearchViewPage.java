@@ -6,6 +6,7 @@ import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.NavUtils;
 import androidx.drawerlayout.widget.DrawerLayout;
+
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Context;
+import android.gesture.GestureOverlayView;
 import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.Gravity;
@@ -176,6 +178,11 @@ public class SearchViewPage extends AppCompatActivity {
 
                     MyRecyclerViewAdapter myRecyclerViewAdapter = new MyRecyclerViewAdapter(getApplicationContext(), products);
                     recyclerView.setAdapter(myRecyclerViewAdapter);
+
+                    //divider for vertical recyclebar
+                    DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(),
+                            DividerItemDecoration.VERTICAL);
+                    recyclerView.addItemDecoration(dividerItemDecoration);
 
 
                 } else {

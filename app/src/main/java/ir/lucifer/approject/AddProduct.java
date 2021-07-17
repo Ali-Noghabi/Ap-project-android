@@ -33,10 +33,12 @@ public class AddProduct extends AppCompatActivity {
     public Button addProButton;
     int SELECT_PICTURE = 200;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_product);
+
 
         previewImageView = findViewById(R.id.productimage_adv);
         previewImageView.setOnClickListener(new View.OnClickListener() {
