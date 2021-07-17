@@ -24,4 +24,10 @@
     <style name="Theme.ApProject.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 
+    <style name="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
+        <item name="materialThemeOverlay">
+            @style/ThemeOverlay.MaterialComponents.AutoCompleteTextView.OutlinedBox.Dense
+        </item>
+        <item name="endIconMode">dropdown_menu</item>
+    </style>
 </resources>

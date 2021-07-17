@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+        android:id="@+id/group1"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/profileItem"
+            android:icon="@drawable/icon_profile"
+            android:title="profile" />
+
+    </group>
+
+    <group
+        android:id="@+id/group2"
+        android:checkableBehavior="single">
+    <item
+        android:id="@+id/subtitleItem"
+        android:title="my shop">
+        <menu>
+            <item
+                android:id="@+id/activitiesItem"
+                android:icon="@drawable/icon_activities_item"
+                android:title="last activities" />
+
+            <item
+                android:id="@+id/advertiseItem"
+                android:icon="@drawable/icon_add_item"
+                android:title="add advertise" />
+
+        </menu>
+    </item>
+    </group>
+</menu>

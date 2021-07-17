@@ -11,7 +11,18 @@
     <com.google.android.material.navigation.NavigationView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_gravity="start" />
+        android:layout_gravity="start"
+        app:headerLayout="@layout/header_navigation"
+        app:menu="@menu/navigation_menu">
+
+    </com.google.android.material.navigation.NavigationView>
+
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -23,25 +34,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <com.google.android.material.appbar.CollapsingToolbarLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:contentScrim="#E1BEE7"
-                app:expandedTitleGravity="bottom"
-                app:layout_scrollFlags="scroll|exitUntilCollapsed"
-                app:scrimAnimationDuration="300">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="230dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/searchactivity"
-                    app:layout_collapseMode="parallax"
-                    app:layout_collapseParallaxMultiplier="1" />
-
-
-            </com.google.android.material.appbar.CollapsingToolbarLayout>
-
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/RecyclerViewSVP"
                 android:layout_width="match_parent"
@@ -51,4 +43,55 @@
     </androidx.core.widget.NestedScrollView>
 
 
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#F0F1EA"
+        android:theme="@style/ThemeOverlay.MaterialComponents"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:liftOnScroll="true">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:contentScrim="#F4F4F3"
+            app:expandedTitleGravity="bottom"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:scrimAnimationDuration="300">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/searchactivity"
+                app:layout_collapseMode="parallax"
+                app:layout_collapseParallaxMultiplier="1" />
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="here"
+            android:layout_margin="5dp">
+         ///   style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense.ExposedDropdownMenu">
+
+        <AutoCompleteTextView
+            android:id="@+id/autoComplete"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="none"
+            android:enabled="false"
+            android:textColor="#000"
+            />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </androidx.drawerlayout.widget.DrawerLayout>
