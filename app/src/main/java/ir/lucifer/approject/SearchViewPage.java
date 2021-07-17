@@ -31,9 +31,13 @@ public class SearchViewPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_view_page);
+<<<<<<< HEAD
 //        getActionBar().setIcon(R.drawable.my_icon);
 //        getActionBar().setHomeButtonEnabled(true);
+=======
+>>>>>>> f472f97b3d2571b50edf13b38085ab618d12dc36
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.my_icon);
 
 
 
