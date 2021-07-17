@@ -3,10 +3,12 @@ package ir.lucifer.approject;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.NavUtils;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
+import android.gesture.GestureOverlayView;
 import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.Menu;
@@ -31,11 +33,6 @@ public class SearchViewPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_view_page);
-<<<<<<< HEAD
-//        getActionBar().setIcon(R.drawable.my_icon);
-//        getActionBar().setHomeButtonEnabled(true);
-=======
->>>>>>> f472f97b3d2571b50edf13b38085ab618d12dc36
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.my_icon);
 
@@ -52,6 +49,7 @@ public class SearchViewPage extends AppCompatActivity {
         UpdateProductsList();
 
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -62,6 +60,7 @@ public class SearchViewPage extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.search_viewpage_menu, menu);
@@ -88,6 +87,11 @@ public class SearchViewPage extends AppCompatActivity {
 
                     MyRecyclerViewAdapter myRecyclerViewAdapter = new MyRecyclerViewAdapter(getApplicationContext(),products);
                     recyclerView.setAdapter(myRecyclerViewAdapter);
+
+                    //divider for vertical recyclebar
+                    DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(),
+                            DividerItemDecoration.VERTICAL);
+                    recyclerView.addItemDecoration(dividerItemDecoration);
 
 
                 } else {
