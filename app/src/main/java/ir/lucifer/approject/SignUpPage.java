@@ -11,6 +11,9 @@ import android.widget.Toast;
 
 import com.google.gson.JsonObject;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -38,6 +41,11 @@ public class SignUpPage extends AppCompatActivity {
         confirmPassword = findViewById(R.id.confirmPassword);
         signUpButton = findViewById(R.id.signupButton);
 
+        String EmailValidator = "^[A-Za-z0-9+_.-]+@(.+)$";
+        Pattern EmailValidatorPattern = Pattern.compile(EmailValidator);
+        String PasswordValidator = "^(?=.*\\d)(?=.*[a-z]).{6,15}$";
+        Pattern PasswordValidatorPattern = Pattern.compile(PasswordValidator);
+
         Retrofit test2 = new Retrofit.Builder().baseUrl(Controler.url)
                 .addConverterFactory(GsonConverterFactory.create()).build();
 
@@ -46,14 +54,19 @@ public class SignUpPage extends AppCompatActivity {
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(password.getText().toString().equals(confirmPassword.getText().toString()))
-                {
-                    postUser();
+
+                Matcher EmailValidatorMatcher = EmailValidatorPattern.matcher(Email.getText());
+                Matcher PasswordValidatorMatcher = PasswordValidatorPattern.matcher(password.getText());
+
+                if(EmailValidatorMatcher.find() && PasswordValidatorMatcher.find()) {
+                    if (password.getText().toString().equals(confirmPassword.getText().toString())) {
+                        postUser();
+                    } else {
+                        Toast.makeText(getApplicationContext(), "Passwords doesn't Match ", Toast.LENGTH_SHORT).show();
+                    }
                 }
                 else
-                {
-                    Toast.makeText(getApplicationContext() , "Passwords doesn't Match " , Toast.LENGTH_SHORT).show();
-                }
+                    Toast.makeText(getApplicationContext(), "Email or password is not Available", Toast.LENGTH_SHORT).show();
             }
         });
 

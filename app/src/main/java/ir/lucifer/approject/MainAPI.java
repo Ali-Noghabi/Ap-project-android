@@ -22,5 +22,14 @@ public interface MainAPI {
     @POST("postUser")
     Call<JsonObject> addUser(@Body JsonObject Input);
 
+    @POST("postProduct")
+    Call<JsonObject> addProduct(@Body JsonObject Input);
+
+    @POST("search")
+    Call<ArrayList<Product>> getSearchRes(@Body JsonObject Input);
+
+    @POST("buy")
+    Call<JsonObject> buyProduct(@Body JsonObject Input);
+
 
 }

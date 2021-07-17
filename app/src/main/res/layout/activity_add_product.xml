@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/search_toolbar"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:visibility="visible"
-    tools:context=".ProductPage">
+    <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/search_toolbar_adv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        tools:context=".AddProduct">
 
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nestedScrollView"
         android:layout_width="match_parent"
-        android:layout_height="610dp"
+        android:layout_height="match_parent"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
 
@@ -22,29 +22,39 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/productimage"
+                android:id="@+id/productimage_adv"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
                 android:background="@color/black" />
 
+            <EditText
+                android:id="@+id/category_adv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:hint="category" />
 
-            <TextView
-                android:id="@+id/productname"
+
+            <EditText
+                android:id="@+id/productname_adv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="20dp"
                 android:background="@color/white"
-                android:text="product name:" />
+                android:hint="product name:" />
 
-            <TextView
-                android:id="@+id/price"
+            <EditText
+                android:id="@+id/price_adv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
                 android:background="@color/white"
-                android:text="price:" />
+                android:hint="price:" />
 
 
             <View
@@ -56,36 +66,17 @@
                 android:layout_marginBottom="5dp"
                 android:background="@color/black" />
 
-            <TextView
-                android:id="@+id/descriptiontitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:background="@color/white"
-                android:text="description:"
-                android:textSize="15dp" />
 
-
-            <TextView
-                android:id="@+id/description"
+            <EditText
+                android:id="@+id/description_av"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="20dp"
-                android:background="@color/white" />
-
-            <TextView
-                android:id="@+id/phonenumber"
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginBottom="10dp"
-                android:background="#FFFFFF"
-
-                android:inputType="phone"
-                android:text="phonenumber" />
+                android:background="@color/white"
+                android:hint="description:" />
 
 
         </LinearLayout>
@@ -98,14 +89,15 @@
         app:layout_anchor="@+id/nestedScrollView"
         app:layout_anchorGravity="center">
 
+
         <Button
-            android:id="@+id/addproductbutton"
+            android:id="@+id/addpro_adv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="6dp"
-            android:text="ADD PRODUCT"
+            android:text="ADD Advertise"
             android:textSize="15dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
