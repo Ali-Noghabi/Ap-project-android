@@ -12,7 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ApProject"
         android:usesCleartextTraffic="true">
-        <activity android:name=".AddProduct"></activity>
+        <activity android:name=".AdminManager"></activity>
+        <activity android:name=".EditProfile" />
+        <activity android:name=".UpdateDeleteProduct" />
+        <activity android:name=".AddProduct" />
         <activity android:name=".UserActivities" />
         <activity android:name=".ProductPage" />
         <activity
