@@ -22,6 +22,7 @@ import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -33,6 +34,9 @@ import com.google.gson.JsonObject;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 
@@ -49,6 +53,9 @@ public class SearchViewPage extends AppCompatActivity {
     public static Activity activity;
     public NavigationView navigationView;
     public DrawerLayout drawerLayout;
+    public Button MaxToMin;
+    public Button MinToMax;
+    public ArrayList<Product> productsAfterUpdate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +65,8 @@ public class SearchViewPage extends AppCompatActivity {
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.my_icon);
         getSupportActionBar().setTitle("Dikan");
 
+        MaxToMin = findViewById(R.id.sortMaxtoMin);
+        MinToMax = findViewById(R.id.sortMintoMax);
         navigationView = findViewById(R.id.NavigationView);
         View header = navigationView.getHeaderView(0);
         TextView NVemail = header.findViewById(R.id.navigationViewEmailTV);
@@ -100,9 +109,65 @@ public class SearchViewPage extends AppCompatActivity {
 
         UpdateProductsList();
 
+        MaxToMin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Collections.sort(productsAfterUpdate , new ProductPriceComparator());
+
+                recyclerView = findViewById(R.id.RecyclerViewSVP);
+                recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+
+
+                MyRecyclerViewAdapter myRecyclerViewAdapter = new MyRecyclerViewAdapter(getApplicationContext(), productsAfterUpdate);
+                recyclerView.setAdapter(myRecyclerViewAdapter);
+
+                //divider for vertical recyclebar
+                DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(),
+                        DividerItemDecoration.VERTICAL);
+                recyclerView.addItemDecoration(dividerItemDecoration);
+            }
+        });
+        MinToMax.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Collections.sort(productsAfterUpdate, new Comparator<Product>() {
+                    @Override
+                    public int compare(Product o1, Product o2) {
+                        return Integer.parseInt(o1.price) - Integer.parseInt(o2.price);
+                    }
+                });
+                productsAfterUpdate = reverseArrayList(productsAfterUpdate);
+
+                recyclerView = findViewById(R.id.RecyclerViewSVP);
+                recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+
+
+                MyRecyclerViewAdapter myRecyclerViewAdapter = new MyRecyclerViewAdapter(getApplicationContext(), productsAfterUpdate);
+                recyclerView.setAdapter(myRecyclerViewAdapter);
+
+                //divider for vertical recyclebar
+                DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(),
+                        DividerItemDecoration.VERTICAL);
+                recyclerView.addItemDecoration(dividerItemDecoration);
+            }
+        });
 
     }
 
+    public ArrayList<Product> reverseArrayList(ArrayList<Product> alist)
+    {
+        // Arraylist for storing reversed elements
+        ArrayList<Product> revArrayList = new ArrayList<Product>();
+        for (int i = alist.size() - 1; i >= 0; i--) {
+
+            // Append the elements in reverse order
+            revArrayList.add(alist.get(i));
+        }
+
+        // Return the reversed arraylist
+        return revArrayList;
+    }
 
     @Override
     protected void onResume() {
@@ -200,6 +265,7 @@ public class SearchViewPage extends AppCompatActivity {
                 if (response.isSuccessful()) {
                     ArrayList<Product> products;
                     products = response.body();
+                    productsAfterUpdate = products;
                     recyclerView = findViewById(R.id.RecyclerViewSVP);
                     recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
 

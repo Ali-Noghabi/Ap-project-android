@@ -63,8 +63,10 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
                 intent.putExtra("PRO_SUBJECT", pro.subject);
                 intent.putExtra("PRO_PRICE", pro.price);
                 intent.putExtra("PRO_DES", pro.description);
-                intent.putExtra("PRO_PHONE", pro.sellerID);
+//                intent.putExtra("PRO_PHONE", pro.sellerID);
                 intent.putExtra("PRO_ID", pro.ID);
+                intent.putExtra("PRO_IMG" , pro.photoLink);
+                intent.putExtra("PRO_PHONE" , pro.Phone);
 
                 SearchViewPage.activity.startActivity(intent);
 

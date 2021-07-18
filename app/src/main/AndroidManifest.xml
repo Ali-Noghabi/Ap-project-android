@@ -3,7 +3,7 @@
     package="ir.lucifer.approject">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -25,7 +25,6 @@
         <activity android:name=".HomePage" />
         <activity android:name=".SignUpPage" />
         <activity android:name=".LoginPage" />
-        <activity android:name=".AddProduct" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -13,7 +13,7 @@ import retrofit2.http.POST;
 public interface MainAPI {
 
 
-    @GET("getProducts")
+    @GET("getProducts2")
     Call<ArrayList<Product>> getProductList ();
 
     @POST("getProducts")

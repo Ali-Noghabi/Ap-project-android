@@ -13,6 +13,7 @@ public class Product {
     public String buyerID = "";
     public String sellerToken;
     public String buyerToken;
+    public String Phone;
 
     public Product() {
     }
