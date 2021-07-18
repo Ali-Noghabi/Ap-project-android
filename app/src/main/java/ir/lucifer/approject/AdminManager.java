@@ -1,46 +1,49 @@
 package ir.lucifer.approject;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.viewpager.widget.ViewPager;
 
-import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.google.android.material.tabs.TabLayout;
 import androidx.viewpager.widget.ViewPager;
 
-
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 
 public class AdminManager extends AppCompatActivity {
 
-    TabLayout tabLayout;
-    ViewPager viewPager;
-    public static Activity activity;
+    public CardView ProList;
+    public CardView UserList;
+    public MainAPI mainAPI;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_manager);
-        activity = this;
-        tabLayout=(TabLayout)findViewById(R.id.tabLayout);
-        viewPager=(ViewPager)findViewById(R.id.viewPager);
-        tabLayout.addTab(tabLayout.newTab().setText("products"));
-        tabLayout.addTab(tabLayout.newTab().setText("users"));
-        tabLayout.addTab(tabLayout.newTab().setText("best Seller"));
-        tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
-        final AdminAdapter adapter = new AdminAdapter(this,getSupportFragmentManager(), tabLayout.getTabCount());
-       viewPager.setAdapter(adapter);
-        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
-        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+
+        Retrofit test2 = new Retrofit.Builder().baseUrl(Controler.url)
+                .addConverterFactory(GsonConverterFactory.create()).build();
+
+        mainAPI = test2.create(MainAPI.class);
+
+        ProList = findViewById(R.id.prolist_adminManager);
+        UserList = findViewById(R.id.sellerlist_adminManager);
+        ProList.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                viewPager.setCurrentItem(tab.getPosition());
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext() , AdminProducts.class));
+
             }
+        });
+        UserList.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-            }
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext() , AdminUsers.class));
+
             }
         });
 

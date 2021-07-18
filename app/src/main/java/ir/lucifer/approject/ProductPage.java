@@ -36,10 +36,12 @@ public class ProductPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_page);
 
+        TextView proCat = findViewById(R.id.addProductCategory);
         TextView proName = findViewById(R.id.productname);
         TextView proPrice = findViewById(R.id.price);
         TextView proDes = findViewById(R.id.description);
         TextView proPhone = findViewById(R.id.phonenumber);
+        TextView proSellerName = findViewById(R.id.sellerNameProductPage);
         ImageView proImage = findViewById(R.id.productimage);
         addProduct = findViewById(R.id.addproductbutton);
         activity = this;
@@ -65,6 +67,8 @@ public class ProductPage extends AppCompatActivity {
         proPrice.setText(String.format("%,d", Integer.parseInt(product.getStringExtra("PRO_PRICE"))));
         proDes.setText(product.getStringExtra("PRO_DES"));
         proPhone.setText(product.getStringExtra("PRO_PHONE"));
+        proCat.setText(product.getStringExtra("PRO_CAT"));
+        proSellerName.setText(product.getStringExtra("PRO_SELLERNAME"));
 
         proPhone.setOnClickListener(new View.OnClickListener() {
             @Override

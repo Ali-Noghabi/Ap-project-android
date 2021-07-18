@@ -10,12 +10,14 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.gesture.GestureOverlayView;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.Gravity;
@@ -56,6 +58,7 @@ public class SearchViewPage extends AppCompatActivity {
     public Button MaxToMin;
     public Button MinToMax;
     public ArrayList<Product> productsAfterUpdate;
+    public SwipeRefreshLayout swipeRefreshLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +71,16 @@ public class SearchViewPage extends AppCompatActivity {
         MaxToMin = findViewById(R.id.sortMaxtoMin);
         MinToMax = findViewById(R.id.sortMintoMax);
         navigationView = findViewById(R.id.NavigationView);
+        swipeRefreshLayout = findViewById(R.id.swipe_container);
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                UpdateProductsList();
+            }
+        });
+        swipeRefreshLayout.setColorSchemeColors(Color.argb(1,255,0,0),
+                Color.argb(1,0,255,0),
+                Color.argb(1,0,0,255));
         View header = navigationView.getHeaderView(0);
         TextView NVemail = header.findViewById(R.id.navigationViewEmailTV);
         TextView NVname = header.findViewById(R.id.navigationViewNameTV);
@@ -278,16 +291,18 @@ public class SearchViewPage extends AppCompatActivity {
                             DividerItemDecoration.VERTICAL);
                     recyclerView.addItemDecoration(dividerItemDecoration);
 
-
                 } else {
                     Toast.makeText(getApplicationContext(), "Error " + response.code(), Toast.LENGTH_SHORT).show();
                 }
+                swipeRefreshLayout.setRefreshing(false);
 
             }
 
             @Override
             public void onFailure(Call<ArrayList<Product>> call, Throwable t) {
                 Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
+                swipeRefreshLayout.setRefreshing(false);
+
             }
         });
     }

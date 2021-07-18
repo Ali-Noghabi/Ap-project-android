@@ -7,9 +7,10 @@ public class Product {
     public String subject;
     public String description;
     public String price;
-    public Boolean isStar;
+    public Boolean isStar = false;
     public String photoLink;
     public String sellerID;
+    public String sellerName;
     public String buyerID = "";
     public String sellerToken;
     public String buyerToken;

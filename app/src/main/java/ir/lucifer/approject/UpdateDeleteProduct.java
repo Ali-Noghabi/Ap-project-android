@@ -1,7 +1,10 @@
 package ir.lucifer.approject;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -30,11 +33,13 @@ public class UpdateDeleteProduct extends AppCompatActivity {
     public Button deleteProduct;
     int SELECT_PICTURE = 200;
     public ImageView editImage;
-
+    public static Activity activity;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_delete_product);
+
+        activity = this;
 
         editImage = findViewById(R.id.productimage_udp);
         updateProduct = findViewById(R.id.updatepro_udp);
@@ -44,10 +49,19 @@ public class UpdateDeleteProduct extends AppCompatActivity {
 
         mainAPI = test2.create(MainAPI.class);
 
+        Intent product = getIntent();
+
         updateProduct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 editProduct();
+            }
+        });
+        deleteProduct.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                deleteProduct(product.getIntExtra("PRO_ID" ,-1));
             }
         });
         editImage.setOnClickListener(new View.OnClickListener() {
@@ -113,6 +127,66 @@ public class UpdateDeleteProduct extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
+
+    }
+
+    private void deleteProduct(int ID) {
+
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+
+        builder.setTitle("هشدار");
+        builder.setMessage("آیا از حذف این محصول اطمینان دارید؟");
+
+        builder.setPositiveButton("بله", new DialogInterface.OnClickListener() {
+
+            public void onClick(DialogInterface dialog, int which) {
+                // Do nothing but close the dialog
+                Call<Boolean> call = mainAPI.deleteProduct(ID);
+                call.enqueue(new Callback<Boolean>() {
+                    @Override
+                    public void onResponse(Call<Boolean> call, Response<Boolean> response) {
+                        if (response.isSuccessful()) {
+                            Boolean res = response.body();
+
+                            if (res == true) {
+
+                                Toast.makeText(getApplicationContext(), "Done", Toast.LENGTH_SHORT).show();
+
+                            } else {
+                                Toast.makeText(getApplicationContext(), "Error? :)", Toast.LENGTH_SHORT).show();
+                            }
+
+                        } else {
+                            Toast.makeText(getApplicationContext(), "Error " + response.code(), Toast.LENGTH_SHORT).show();
+                        }
+
+                    }
+
+                    @Override
+                    public void onFailure(Call<Boolean> call, Throwable t) {
+                        Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+                deleteProduct.setEnabled(false);
+                dialog.dismiss();
+            }
+        });
+
+        builder.setNegativeButton("خیر", new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+                // Do nothing
+                dialog.dismiss();
+            }
+        });
+
+        AlertDialog alert = builder.create();
+        alert.show();
+
 
     }
     void imageChooser() {

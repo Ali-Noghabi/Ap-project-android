@@ -16,11 +16,23 @@ public interface MainAPI {
     @GET("getProducts2")
     Call<ArrayList<Product>> getProductList ();
 
+    @GET("getUsers")
+    Call<ArrayList<User>> getUsersList ();
+
+    @GET("getProductsAdmin")
+    Call<ArrayList<Product>> getProductListAdmin ();
+
     @POST("getProducts")
     Call<ArrayList<Product>> getProductByID (@Body String user);
 
     @POST("login")
     Call<JsonObject> getLoginInfo(@Body JsonObject Input);
+
+    @POST("deleteProduct")
+    Call<Boolean> deleteProduct(@Body int ID);
+
+    @POST("changeStar")
+    Call<Boolean> changeStar(@Body JsonObject Input);
 
     @POST("editUser")
     Call<JsonObject> editUser(@Body JsonObject Input);

@@ -56,11 +56,17 @@
 
                 </LinearLayout>
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/RecyclerViewSVP"
+                <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                    android:id="@+id/swipe_container"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginBottom="92dp" />
+                    android:layout_height="3000dp">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/RecyclerViewSVP"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="92dp" />
+                </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
             </LinearLayout>
         </androidx.core.widget.NestedScrollView>
 

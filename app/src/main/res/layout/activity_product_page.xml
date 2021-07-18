@@ -29,6 +29,16 @@
                 android:background="@color/black" />
 
 
+            <EditText
+                android:id="@+id/addProductCategory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:hint="category" />
+
             <TextView
                 android:id="@+id/productname"
                 android:layout_width="match_parent"
@@ -87,6 +97,17 @@
 
                 android:inputType="phone"
                 android:text="phonenumber" />
+
+            <TextView
+                android:id="@+id/sellerNameProductPage"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="10dp"
+                android:background="#FFFFFF"
+
+                android:inputType="phone"
+                android:text="sellerName" />
 
 
         </LinearLayout>

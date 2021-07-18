@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
 
         if(username.getText().toString().equals("admin") && password.getText().toString().equals("admin"))
         {
-//            startActivity(new Intent(MainActivity.activity , AdminPanel.class));
+            startActivity(new Intent(MainActivity.activity , AdminManager.class));
         }
         else {
             JsonObject obj1 = new JsonObject();

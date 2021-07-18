@@ -1,6 +1,5 @@
 package ir.lucifer.approject;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -11,20 +10,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAdapter.ViewHolder> {
+public class MyRecyclerViewAdapterLastActivity extends RecyclerView.Adapter<MyRecyclerViewAdapterLastActivity.ViewHolder> {
 
     private List<Product> mData;
     private LayoutInflater mInflater;
     private ItemClickListener mClickListener;
 
     // data is passed into the constructor
-    MyRecyclerViewAdapter(Context context, List<Product> data) {
+    MyRecyclerViewAdapterLastActivity(Context context, List<Product> data) {
         this.mInflater = LayoutInflater.from(context);
         this.mData = data;
 
@@ -59,7 +57,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
             @Override
             public void onClick(View v) {
                 Product pro = mData.get(position);
-                Intent intent = new Intent(SearchViewPage.activity, ProductPage.class);
+                Intent intent = new Intent(SearchViewPage.activity, UpdateDeleteProduct.class);
                 intent.putExtra("PRO_SUBJECT", pro.subject);
                 intent.putExtra("PRO_PRICE", pro.price);
                 intent.putExtra("PRO_DES", pro.description);

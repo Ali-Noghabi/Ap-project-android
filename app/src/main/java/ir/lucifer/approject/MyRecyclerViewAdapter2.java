@@ -16,7 +16,16 @@ import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.gson.JsonObject;
+
+import java.util.ArrayList;
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MyRecyclerViewAdapter2 extends RecyclerView.Adapter<MyRecyclerViewAdapter2.ViewHolder> {
 
@@ -54,29 +63,35 @@ public class MyRecyclerViewAdapter2 extends RecyclerView.Adapter<MyRecyclerViewA
             img = BitmapFactory.decodeByteArray(dec, 0, dec.length);
         }
         holder.PhotoImageViewRVA.setImageBitmap(img);
+        holder.SwitchIsStar.setChecked(product.isStar);
         holder.SwitchIsStar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(AdminManager.activity, "change is star", Toast.LENGTH_SHORT).show();
+                Retrofit test2 = new Retrofit.Builder().baseUrl(Controler.url)
+                        .addConverterFactory(GsonConverterFactory.create()).build();
+
+                MainAPI mainAPI = test2.create(MainAPI.class);
+
+                JsonObject obj = new JsonObject();
+                obj.addProperty("isStar" , holder.SwitchIsStar.isChecked());
+                obj.addProperty("ID" , product.ID);
+                Call<Boolean> call = mainAPI.changeStar(obj);
+
+
+                call.enqueue(new Callback<Boolean>() {
+                    @Override
+                    public void onResponse(Call<Boolean> call, Response<Boolean> response) {
+                        Toast.makeText(AdminProducts.activity, "start changed", Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onFailure(Call<Boolean> call, Throwable t) {
+                        Toast.makeText(AdminProducts.activity, t.getMessage() + "", Toast.LENGTH_SHORT).show();
+                    }
+                });
             }
         });
-//        holder.itemView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Product pro = mData.get(position);
-//                Intent intent = new Intent(SearchViewPage.activity, ProductPage.class);
-//                intent.putExtra("PRO_SUBJECT", pro.subject);
-//                intent.putExtra("PRO_PRICE", pro.price);
-//                intent.putExtra("PRO_DES", pro.description);
-////                intent.putExtra("PRO_PHONE", pro.sellerID);
-//                intent.putExtra("PRO_ID", pro.ID);
-//                intent.putExtra("PRO_IMG" , pro.photoLink);
-//                intent.putExtra("PRO_PHONE" , pro.Phone);
-//
-//                SearchViewPage.activity.startActivity(intent);
-//
-//            }
-//        });
+
     }
 
     // total number of rows
@@ -95,11 +110,8 @@ public class MyRecyclerViewAdapter2 extends RecyclerView.Adapter<MyRecyclerViewA
             super(itemView);
             SubjectTextViewRVA = itemView.findViewById(R.id.proName);
             PhotoImageViewRVA = itemView.findViewById(R.id.productImageView);
-            SwitchIsStar = itemView.findViewById(R.id.adminProductCardSwich);
+            SwitchIsStar = itemView.findViewById(R.id.AdminProlistSwitch);
             SwitchIsStar.setOnClickListener(this);
-//            SubjectTextViewRVA.setOnClickListener(this);
-//            PhotoImageViewRVA.setOnClickListener(this);
-//            itemView.setOnClickListener(this);
 
         }
 

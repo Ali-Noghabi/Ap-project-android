@@ -13,8 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ApProject"
         android:usesCleartextTraffic="true">
-        <activity android:name=".AdminProList"></activity>
+        <activity android:name=".AdminProducts"></activity>
         <activity android:name=".LastActivity" />
+        <activity android:name=".AdminUsers"/>
         <activity android:name=".AdminManager" />
         <activity android:name=".EditProfile" />
         <activity android:name=".UpdateDeleteProduct" />

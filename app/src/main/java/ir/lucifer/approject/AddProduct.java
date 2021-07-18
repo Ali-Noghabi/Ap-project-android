@@ -70,6 +70,7 @@ public class AddProduct extends AppCompatActivity {
         progress.show();
 
         JsonObject obj1 = new JsonObject();
+        EditText proCategory = findViewById(R.id.category_adv);
         EditText proName = findViewById(R.id.productname_adv);
         EditText proPrice = findViewById(R.id.price_adv);
         EditText proDes = findViewById(R.id.description_av);
@@ -91,7 +92,7 @@ public class AddProduct extends AppCompatActivity {
         obj1.addProperty("description", proDes.getText().toString());
         obj1.addProperty("photoLink", img_str);
         obj1.addProperty("sellerToken", Controler.Token);
-        obj1.addProperty("category" , "-");
+        obj1.addProperty("category" , proCategory.getText().toString());
         obj1.addProperty("isStar" , false);
 
         progress.dismiss();
