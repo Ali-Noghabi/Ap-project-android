@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
 //                startActivity(new Intent(activity , SignUpPage.class));
-                startActivity(new Intent(activity , AddProduct.class));
+                startActivity(new Intent(activity , SignUpPage.class));
             }
         });
 
@@ -85,6 +85,8 @@ public class MainActivity extends AppCompatActivity {
                             Controler.isLogin = true;
                             Controler.Name = obj.get("name").getAsString();
                             Controler.Username = username.getText().toString();
+                            Controler.Password = password.getText().toString();
+                            Controler.PhoneNum = obj.get("phonenum").getAsString();
                             Toast.makeText(getApplicationContext(), "Login", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(MainActivity.activity, SearchViewPage.class));
                         } else {

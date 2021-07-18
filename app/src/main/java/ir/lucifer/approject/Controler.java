@@ -7,6 +7,8 @@ public class Controler {
     public static String Token = null;
     public static String Username = null;
     public static String Name = null;
+    public static String Password = null;
+    public static String PhoneNum = null;
     public static boolean isLogin = false;
 
 }

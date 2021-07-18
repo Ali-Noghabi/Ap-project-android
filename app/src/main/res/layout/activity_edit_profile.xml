@@ -76,7 +76,7 @@
                 android:layout_margin="16dp"
                 android:background="@drawable/signup_edittext"
                 android:ems="10"
-                android:hint="password"
+                android:hint="new password"
                 android:inputType="textPassword"
                 android:padding="8dp"
                 android:textSize="8dp" />
@@ -88,7 +88,7 @@
                 android:layout_margin="16dp"
                 android:background="@drawable/signup_edittext"
                 android:ems="10"
-                android:hint=" confirm password"
+                android:hint=" confirm new password"
                 android:inputType="textPassword"
                 android:padding="8dp"
                 android:textSize="8dp" />

@@ -16,8 +16,17 @@ public interface MainAPI {
     @GET("getProducts")
     Call<ArrayList<Product>> getProductList ();
 
+    @POST("getProducts")
+    Call<ArrayList<Product>> getProductByID (@Body String user);
+
     @POST("login")
     Call<JsonObject> getLoginInfo(@Body JsonObject Input);
+
+    @POST("editUser")
+    Call<JsonObject> editUser(@Body JsonObject Input);
+
+    @POST("editPro")
+    Call<JsonObject> editPro(@Body JsonObject Input);
 
     @POST("postUser")
     Call<JsonObject> addUser(@Body JsonObject Input);

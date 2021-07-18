@@ -22,13 +22,13 @@ tools:context=".AddProduct">
         android:orientation="vertical">
 
         <ImageView
-            android:id="@+id/productimage_adv"
+            android:id="@+id/productimage_udp"
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:background="@color/black" />
 
         <EditText
-            android:id="@+id/category_adv"
+            android:id="@+id/category_udp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
@@ -39,7 +39,7 @@ tools:context=".AddProduct">
 
 
         <EditText
-            android:id="@+id/productname_adv"
+            android:id="@+id/productname_udp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -49,7 +49,7 @@ tools:context=".AddProduct">
             android:hint="product name:" />
 
         <EditText
-            android:id="@+id/price_adv"
+            android:id="@+id/price_udp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
@@ -68,7 +68,7 @@ tools:context=".AddProduct">
 
 
         <EditText
-            android:id="@+id/description_av"
+            android:id="@+id/description_udp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -91,7 +91,7 @@ tools:context=".AddProduct">
 
 
     <Button
-        android:id="@+id/updatepro_adv"
+        android:id="@+id/updatepro_udp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -101,10 +101,10 @@ tools:context=".AddProduct">
         android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/deletepro_adv"/>
+        app:layout_constraintStart_toEndOf="@+id/deletepro_udp"/>
 
     <Button
-        android:id="@+id/deletepro_adv"
+        android:id="@+id/deletepro_udp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"

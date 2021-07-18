@@ -26,8 +26,8 @@ public class AdminManager extends AppCompatActivity {
         tabLayout.addTab(tabLayout.newTab().setText("Play"));
         tabLayout.addTab(tabLayout.newTab().setText("Favourite"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
-        final MyA adapter = new MyAdapter(this,getSupportFragmentManager(), tabLayout.getTabCount());
-        viewPager.setAdapter(adapter);
+//        final MyA adapter = new MyAdapter(this,getSupportFragmentManager(), tabLayout.getTabCount());
+//        viewPager.setAdapter(adapter);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override

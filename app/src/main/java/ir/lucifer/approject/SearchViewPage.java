@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.gesture.GestureOverlayView;
 import android.os.Bundle;
 import android.view.ContextMenu;
@@ -22,6 +23,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -45,6 +47,8 @@ public class SearchViewPage extends AppCompatActivity {
     public MainAPI mainAPI;
     public RecyclerView recyclerView;
     public static Activity activity;
+    public NavigationView navigationView;
+    public DrawerLayout drawerLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,11 +58,10 @@ public class SearchViewPage extends AppCompatActivity {
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.my_icon);
         getSupportActionBar().setTitle("Dikan");
 
-        NavigationView navigationView = findViewById(R.id.NavigationView);
+        navigationView = findViewById(R.id.NavigationView);
         View header = navigationView.getHeaderView(0);
         TextView NVemail = header.findViewById(R.id.navigationViewEmailTV);
         TextView NVname = header.findViewById(R.id.navigationViewNameTV);
-        Toast.makeText(getApplicationContext(), "" + Controler.Username + " " + Controler.Name, Toast.LENGTH_SHORT).show();
         NVemail.setText(Controler.Username);
         NVname.setText(Controler.Name);
 
@@ -71,10 +74,35 @@ public class SearchViewPage extends AppCompatActivity {
 
         mainAPI = test2.create(MainAPI.class);
 
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull @NotNull MenuItem item) {
+
+                switch(item.getItemId())
+                {
+                    case R.id.profileItem:
+                        startActivity(new Intent(activity , EditProfile.class));
+                        break;
+                    case R.id.activitiesItem:
+                        startActivity(new Intent(activity , LastActivity.class));
+                        break;
+                    case R.id.advertiseItem:
+                        startActivity(new Intent(activity , AddProduct.class));
+                        break;
+                    default:
+                        break;
+                }
+                return false;
+            }
+        });
+
+        navigationView.bringToFront();
 
         UpdateProductsList();
 
+
     }
+
 
     @Override
     protected void onResume() {
@@ -82,13 +110,13 @@ public class SearchViewPage extends AppCompatActivity {
         UpdateProductsList();
     }
 
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                NavigationView navigationView = findViewById(R.id.NavigationView);
-                Toast.makeText(getApplicationContext(), "" + navigationView.isShown(), Toast.LENGTH_SHORT).show();
-                DrawerLayout drawerLayout = findViewById(R.id.search_toolbar);
+                navigationView = findViewById(R.id.NavigationView);
+                drawerLayout = findViewById(R.id.search_toolbar);
 
                 if (navigationView.isShown() == true)
                     drawerLayout.closeDrawer(Gravity.LEFT);

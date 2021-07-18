@@ -24,7 +24,8 @@
             <ImageView
                 android:id="@+id/ImageViewPIV"
                 android:layout_width="111dp"
-                android:layout_height="match_parent"
+                android:layout_height="150dp"
+                android:scaleType="centerCrop"
                 tools:srcCompat="@drawable/loginbutton" />
 
             <LinearLayout
@@ -36,7 +37,7 @@
                 <TextView
                     android:id="@+id/SubjectPIV"
                     android:layout_width="match_parent"
-                    android:layout_height="112dp"
+                    android:layout_height="84dp"
                     android:layout_marginBottom="10dp"
                     android:text="Subject"
                     android:textSize="20sp" />
