@@ -3,6 +3,7 @@ package ir.lucifer.approject;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import android.app.Activity;
 import android.os.Bundle;
 
 import com.google.android.material.tabs.TabLayout;
@@ -15,11 +16,12 @@ public class AdminManager extends AppCompatActivity {
 
     TabLayout tabLayout;
     ViewPager viewPager;
-
+    public static Activity activity;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_manager);
+        activity = this;
         tabLayout=(TabLayout)findViewById(R.id.tabLayout);
         viewPager=(ViewPager)findViewById(R.id.viewPager);
         tabLayout.addTab(tabLayout.newTab().setText("products"));
