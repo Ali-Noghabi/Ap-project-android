@@ -22,12 +22,12 @@ public class AdminManager extends AppCompatActivity {
         setContentView(R.layout.activity_admin_manager);
         tabLayout=(TabLayout)findViewById(R.id.tabLayout);
         viewPager=(ViewPager)findViewById(R.id.viewPager);
-        tabLayout.addTab(tabLayout.newTab().setText("Android"));
-        tabLayout.addTab(tabLayout.newTab().setText("Play"));
-        tabLayout.addTab(tabLayout.newTab().setText("Favourite"));
+        tabLayout.addTab(tabLayout.newTab().setText("products"));
+        tabLayout.addTab(tabLayout.newTab().setText("users"));
+        tabLayout.addTab(tabLayout.newTab().setText("best Seller"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
-//        final MyA adapter = new MyAdapter(this,getSupportFragmentManager(), tabLayout.getTabCount());
-//        viewPager.setAdapter(adapter);
+        final AdminAdapter adapter = new AdminAdapter(this,getSupportFragmentManager(), tabLayout.getTabCount());
+       viewPager.setAdapter(adapter);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
