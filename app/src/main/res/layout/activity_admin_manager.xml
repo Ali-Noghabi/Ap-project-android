@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,7 +10,7 @@
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="221dp"
+        android:layout_height="200dp"
         android:src="@drawable/adminanalyze"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteY="76dp" />
@@ -19,8 +19,11 @@
     <TableLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginBottom="40dp">
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="120dp">
 
         <TableRow
             android:layout_width="match_parent"
@@ -58,12 +61,14 @@
 
                     <EditText
                         android:id="@+id/sumPrices"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_margin="16dp"
+                        android:ems="10"
                         android:padding="8dp"
-                        android:textSize="12sp" />
+                        android:background="@color/blue_700"
+                        android:textSize="8sp" />
 
 
                 </LinearLayout>
@@ -89,6 +94,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
+                    miriam, [20.07.21 19:18]
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -106,8 +112,10 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_margin="16dp"
+                        android:ems="10"
                         android:padding="8dp"
-                        android:textSize="12sp" />
+                        android:textSize="8sp"
+                        android:background="@color/pink_300"/>
 
 
                 </LinearLayout>
@@ -156,8 +164,10 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_margin="16dp"
+                        android:ems="10"
                         android:padding="8dp"
-                        android:textSize="12sp" />
+                        android:textSize="8sp"
+                        android:background="@color/pink_500"/>
 
 
                 </LinearLayout>
@@ -179,7 +189,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="parent">
 
-
+                miriam, [20.07.21 19:18]
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -202,9 +212,11 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_margin="16dp"
+                        android:ems="10"
                         android:inputType="textPersonName"
                         android:padding="8dp"
-                        android:textSize="12sp"/>
+                        android:textSize="8sp"
+                        android:background="@color/blue_500"/>
 
 
                 </LinearLayout>
@@ -236,7 +248,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:paddingTop="25dp"
+                    android:paddingTop="40dp"
                     android:paddingBottom="40dp">
 
                     <TextView
@@ -269,12 +281,12 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="parent">
 
-
+                miriam, [20.07.21 19:18]
                 <LinearLayout
                     android:layout_width="123dp"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:paddingTop="25dp"
+                    android:paddingTop="40dp"
                     android:paddingBottom="40dp">
 
                     <TextView
@@ -293,5 +305,4 @@
         </TableRow>
 
     </TableLayout>
-</LinearLayout>
-
+</RelativeLayout>
