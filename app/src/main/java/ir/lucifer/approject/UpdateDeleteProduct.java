@@ -20,6 +20,7 @@ import com.google.gson.JsonObject;
 
 import java.io.ByteArrayOutputStream;
 
+import br.com.sapereaude.maskedEditText.MaskedEditText;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -77,9 +78,9 @@ public class UpdateDeleteProduct extends AppCompatActivity {
 
 
         JsonObject obj1 = new JsonObject();
-        EditText editSubject = findViewById(R.id.productname_udp);
-        EditText editDes = findViewById(R.id.description_udp);
-        EditText editPrice = findViewById(R.id.price_udp);
+        MaskedEditText editSubject = findViewById(R.id.productname_udp);
+        MaskedEditText editDes = findViewById(R.id.description_udp);
+        MaskedEditText editPrice = findViewById(R.id.price_udp);
 
 
         editImage.buildDrawingCache();

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">دیکان</string>
+    <string name="create_new_account">ساخت حساب کاربری</string>
+    <string name="UserName">نام</string>
+    <string name="email">ایمیل</string>
+    <string name="phone_num">شماره تلفن</string>
+    <string name="password">پسورد</string>
+    <string name="confirm_password">تایید پسورد</string>
+    <string name="sign_up">ثبت نام</string>
+    <string name="lowest_price">کمترین قیمت</string>
+    <string name="highest_price">بیشترین قیمت</string>
+    <string name="welcome_to_dikan">به دیکان خوش آمدید</string>
+    <string  name="forget_password">فراموشی پسورد؟</string>
+    <string name="login">ورود</string>
+    <string name="category">گروه</string>
+    <string name="name">نام:</string>
+    <string name="price">قیمت:</string>
+    <string name="description">توضیح:</string>
+    <string name="add_advertise">ثبت آگهی</string>
+    <string name="update_adv">تغییر آگهی</string>
+    <string name="delete_adv">حذف آگهی</string>
+    <string name="add_card">خرید</string>
+    <string name="seller_name">نام فروشنده:</string>
+    <string name="edit_profile">ویرایش حساب کاربری</string>
+    <string name="new_password">پسورد جدید</string>
+    <string name="confirm_new_password">تکرار پسورد جدید</string>
+    <string name="confirm">تایید</string>
+    <string name="login_counter">تعداد لاگین ها:</string>
+    <string name="my_ads">آگهی های من</string>
+    <string name="all_products">لیست محصولات</string>
+    <string name="sum_prices">مجموع قیمت ها</string>
+    <string name="num_products">تعداد کل محصولات</string>
+    <string name="num_sellers">تعداد کل فروشندگان</string>
+    <string name="best_seller">برترین فروشنده</string>
+    <string name="product_list">لیست محصولات</string>
+    <string name="seller_list">لیست فروشندگان</string>
+    <string name="mandatory">ضروری*</string>
+
+</resources>

@@ -24,8 +24,7 @@ tools:context=".AddProduct">
         <ImageView
             android:id="@+id/productimage_udp"
             android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:background="@color/black" />
+            android:layout_height="300dp" />
 
         <EditText
             android:id="@+id/category_udp"
@@ -34,40 +33,46 @@ tools:context=".AddProduct">
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="10dp"
-            android:background="@color/white"
-            android:hint="category" />
+            android:padding="4dp"
+            android:background="@drawable/edittext"
+            android:hint="@string/category"
+            android:textColorHighlight="@color/grayDark"
+            android:textColor="@color/grayDark"/>
 
 
-        <EditText
+        <br.com.sapereaude.maskedEditText.MaskedEditText
             android:id="@+id/productname_udp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginRight="20dp"
+            android:maxLines="2"
             android:background="@color/white"
-            android:hint="product name:" />
+            app:mask="@string/name"
+            app:keep_hint="true"/>
 
-        <EditText
+        <br.com.sapereaude.maskedEditText.MaskedEditText
             android:id="@+id/price_udp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:background="@color/white"
-            android:hint="price:" />
+            app:mask="@string/price"
+            app:keep_hint="true"/>
 
 
         <View
 
             android:layout_width="match_parent"
-            android:layout_height="2dp"
+            android:layout_height="1dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="5dp"
-            android:background="@color/black" />
+            android:background="@color/gray" />
 
 
-        <EditText
+        <br.com.sapereaude.maskedEditText.MaskedEditText
             android:id="@+id/description_udp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -76,7 +81,8 @@ tools:context=".AddProduct">
             android:layout_marginRight="20dp"
             android:layout_marginBottom="20dp"
             android:background="@color/white"
-            android:hint="description:" />
+            app:mask="@string/description"
+            app:keep_hint="true"/>
 
 
     </LinearLayout>
@@ -90,26 +96,37 @@ tools:context=".AddProduct">
     app:layout_anchorGravity="center">
 
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/updatepro_udp"
-        android:layout_width="wrap_content"
+        android:layout_width="180dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="6dp"
-        android:text="Update Advertise"
-        android:textSize="15dp"
+        android:background="@drawable/round_gradiant_button"
+        android:text="@string/update_adv"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:fontFamily="@font/brawler"
+        android:textColor="@color/white"
+        android:padding="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/deletepro_udp"/>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/deletepro_udp"
-        android:layout_width="wrap_content"
+        android:layout_width="180dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginBottom="6dp"
-        android:text="Delete advertise"
+        android:background="@drawable/round_gradiant_button"
+        android:text="@string/delete_adv"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:fontFamily="@font/brawler"
+        android:textColor="@color/white"
+        android:padding="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 

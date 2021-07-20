@@ -24,9 +24,9 @@
             <TextView
                 android:id="@+id/UserNameUIV"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:text="SellerName : "
+                android:text="@string/seller_name"
                 android:textSize="20sp" />
 
             <LinearLayout
@@ -38,7 +38,7 @@
                     android:id="@+id/LoginCounterUIV"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Login Counter : "
+                    android:text="@string/login_counter"
                     android:textSize="20sp" />
 
             </LinearLayout>

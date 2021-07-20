@@ -4,14 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EditProfile">
+    tools:context=".EditProfile"
+    android:background="@drawable/background_profile_gradient">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="205dp" />
+        app:layout_constraintGuide_begin="196dp" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="0dp"
+        android:layout_height="207dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/cardView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.48"
+        app:srcCompat="@drawable/icon_profile_white" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
@@ -40,20 +55,21 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="12dp"
                 android:layout_marginBottom="12dp"
-                android:text="edit profile"
-                android:textSize="16dp" />
+                android:text="@string/edit_profile"
+                android:textSize="18dp"
+                android:textStyle="bold"/>
 
             <EditText
                 android:id="@+id/editName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
-                android:background="@drawable/signup_edittext"
+                android:background="@drawable/edittext"
                 android:ems="10"
-                android:hint="Name"
+                android:hint="@string/UserName"
                 android:inputType="textPersonName"
-                android:padding="8dp"
-                android:textSize="8sp" />
+                android:padding="10dp"
+                android:textSize="10sp" />
 
 
             <EditText
@@ -61,12 +77,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
-                android:background="@drawable/signup_edittext"
+                android:background="@drawable/edittext"
                 android:ems="10"
-                android:hint="phone number"
+                android:hint="@string/phone_num"
                 android:inputType="phone"
-                android:padding="8dp"
-                android:textSize="8dp" />
+                android:padding="10dp"
+                android:textSize="10dp" />
 
             <EditText
 
@@ -74,33 +90,33 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
-                android:background="@drawable/signup_edittext"
+                android:background="@drawable/edittext"
                 android:ems="10"
-                android:hint="new password"
+                android:hint="@string/new_password"
                 android:inputType="textPassword"
-                android:padding="8dp"
-                android:textSize="8dp" />
+                android:padding="10dp"
+                android:textSize="10dp" />
 
             <EditText
                 android:id="@+id/confirmPassEdit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
-                android:background="@drawable/signup_edittext"
+                android:background="@drawable/edittext"
                 android:ems="10"
-                android:hint=" confirm new password"
+                android:hint="@string/confirm_new_password"
                 android:inputType="textPassword"
-                android:padding="8dp"
-                android:textSize="8dp" />
+                android:padding="10dp"
+                android:textSize="10dp" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/editProfileButton"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="12dp"
-                android:background="@drawable/round_signupbutton"
-                android:text="confirm"
+                android:background="@drawable/round_profile_button"
+                android:text="@string/confirm"
                 android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textSize="20dp" />

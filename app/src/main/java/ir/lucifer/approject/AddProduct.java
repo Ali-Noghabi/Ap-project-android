@@ -20,6 +20,7 @@ import com.google.gson.JsonObject;
 
 import java.io.ByteArrayOutputStream;
 
+import br.com.sapereaude.maskedEditText.MaskedEditText;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -71,9 +72,9 @@ public class AddProduct extends AppCompatActivity {
 
         JsonObject obj1 = new JsonObject();
         EditText proCategory = findViewById(R.id.category_adv);
-        EditText proName = findViewById(R.id.productname_adv);
-        EditText proPrice = findViewById(R.id.price_adv);
-        EditText proDes = findViewById(R.id.description_av);
+        MaskedEditText proName = findViewById(R.id.productname_adv);
+        MaskedEditText proPrice = findViewById(R.id.price_adv);
+        MaskedEditText proDes = findViewById(R.id.description_av);
 
 
         previewImageView.buildDrawingCache();

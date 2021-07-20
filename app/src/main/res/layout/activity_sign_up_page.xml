@@ -4,26 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#CCE3DE"
+    android:background="@drawable/background_profile_gradient"
     android:textAlignment="center"
     tools:context=".SignUpPage">
 
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="247dp"
-        android:layout_height="248dp"
+        android:layout_width="768dp"
+        android:layout_height="255dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.738"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/signout" />
+        app:srcCompat="@drawable/secondregister" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="205dp" />
+        app:layout_constraintGuide_begin="196dp" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
@@ -53,79 +54,130 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="12dp"
                 android:layout_marginBottom="12dp"
-                android:text="Create new account"
+                android:text="@string/create_new_account"
                 android:textSize="16dp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:endIconTint="clear_text"
+                app:helperText="@string/mandatory"
+                app:helperTextTextColor="@color/red"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
 
             <EditText
                 android:id="@+id/name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:background="@drawable/signup_edittext"
-                android:ems="10"
-                android:hint="Name"
+                android:hint="@string/UserName"
+                android:background="@drawable/edittext"
                 android:inputType="textPersonName"
-                android:padding="8dp"
-                android:textSize="8sp" />
+                android:textSize="10dp"
+                android:imeOptions="actionNext" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:endIconTint="clear_text"
+                app:helperText="@string/mandatory"
+                app:helperTextTextColor="@color/red"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
 
             <EditText
                 android:id="@+id/usernameSignup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:background="@drawable/signup_edittext"
+                android:background="@drawable/edittext"
                 android:ems="10"
                 android:hint="email"
                 android:inputType="textEmailAddress"
-                android:padding="8dp"
-                android:textSize="8dp" />
+                android:padding="10dp"
+                android:textSize="10dp" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:endIconTint="clear_text"
+                app:helperText="@string/mandatory"
+                app:helperTextTextColor="@color/red"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
 
 
             <EditText
                 android:id="@+id/phonenum"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:background="@drawable/signup_edittext"
+                android:background="@drawable/edittext"
                 android:ems="10"
-                android:hint="phone number"
+                android:hint="@string/phone_num"
                 android:inputType="phone"
-                android:padding="8dp"
-                android:textSize="8dp" />
+                android:padding="10dp"
+                android:textSize="10dp"
+                android:imeOptions="actionNext"/>
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:endIconTint="clear_text"
+                app:helperText="@string/mandatory"
+                app:helperTextTextColor="@color/red"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                app:counterEnabled="true"
+                app:counterMaxLength="15"
+                app:counterTextAppearance="@color/grayDark"
+                app:counterOverflowTextColor="@color/red"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
 
             <EditText
 
                 android:id="@+id/passwordSignup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:background="@drawable/signup_edittext"
+                android:background="@drawable/edittext"
                 android:ems="10"
-                android:hint="password"
+                android:hint="@string/password"
                 android:inputType="textPassword"
-                android:padding="8dp"
-                android:textSize="8dp" />
+                android:padding="10dp"
+                android:textSize="10dp"
+                android:imeOptions="actionNext"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
 
             <EditText
                 android:id="@+id/confirmPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
-                android:background="@drawable/signup_edittext"
+                android:background="@drawable/edittext"
                 android:ems="10"
-                android:hint=" confirm password"
+                android:hint="@string/confirm_password"
                 android:inputType="textPassword"
-                android:padding="8dp"
-                android:textSize="8dp" />
+                android:padding="10dp"
+                android:textSize="10dp" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/signupButton"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="12dp"
-                android:background="@drawable/round_signupbutton"
-                android:text="SIGN UP"
+                android:background="@drawable/round_profile_button"
+                android:text="@string/sign_up"
                 android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textSize="20dp" />

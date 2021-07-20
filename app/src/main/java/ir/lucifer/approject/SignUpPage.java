@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.gson.JsonObject;
 
 import java.util.regex.Matcher;
@@ -22,6 +23,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class SignUpPage extends AppCompatActivity {
 
+    public TextInputLayout tilName,tilEmail;
     public EditText Email;
     public EditText Name;
     public EditText PhoneNum;
@@ -50,6 +52,7 @@ public class SignUpPage extends AppCompatActivity {
                 .addConverterFactory(GsonConverterFactory.create()).build();
 
         mainAPI = test2.create(MainAPI.class);
+
 
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override

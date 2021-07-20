@@ -39,7 +39,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="84dp"
                     android:layout_marginBottom="10dp"
-                    android:text="Subject"
+                    android:text="@string/name"
                     android:textSize="20sp" />
 
                 <LinearLayout
@@ -49,9 +49,9 @@
 
                     <TextView
                         android:id="@+id/PricePIV"
-                        android:layout_width="108dp"
+                        android:layout_width="130dp"
                         android:layout_height="match_parent"
-                        android:text="Price"
+                        android:text="@string/price"
                         android:textSize="20sp" />
 
                     <TextView
@@ -59,8 +59,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="Category"
-                        android:textSize="20sp" />
+                        android:text="@string/category"
+                        android:background="@drawable/edittext"
+                        android:paddingStart="20dp"
+                        android:paddingTop="5dp"
+                        android:textSize="15sp" />
                 </LinearLayout>
 
 

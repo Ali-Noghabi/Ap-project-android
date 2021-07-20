@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ApProject</string>
+    <string name="app_name">Dikan</string>
     <string name="title_activity_search_view">ScrollingActivity</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
@@ -100,4 +100,40 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+    <string name="create_new_account">CREATE NEW ACCOUNT</string>
+    <string name="UserName">Name</string>
+    <string name="email">Email</string>
+    <string name="phone_num">PhoneNumber</string>
+    <string name="password">PassWord</string>
+    <string name="confirm_password">ConFirm Password</string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="lowest_price">LOWEST PRICE</string>
+    <string name="highest_price">HIGHEST PRICE</string>
+    <string name="welcome_to_dikan">WELCOME TO DIKAN</string>
+    <string  name="forget_password">FORGET PASSWORD?</string>
+    <string name="login">LOGIN</string>
+    <string name="category">category</string>
+    <string name="name">name:</string>
+    <string name="price">price:</string>
+    <string name="description">description:</string>
+    <string name="add_advertise">ADD ADVERTISE</string>
+    <string name="update_adv">UPDATE</string>
+    <string name="delete_adv">DELETE</string>
+    <string name="add_card">ADD CARD</string>
+    <string name="seller_name">Seller Name:</string>
+    <string name="edit_profile">EDIT YOUR PROFILE</string>
+    <string name="new_password">New Password</string>
+    <string name="confirm_new_password">Confirm New Password</string>
+    <string name="confirm">CONFIRM</string>
+    <string name="login_counter">Login Counter:</string>
+    <string name="my_ads">MY ADVERTISEMENTS</string>
+    <string name="all_products">ALL PRODUCTS</string>
+    <string name="sum_prices">SUM OF PRICES</string>
+    <string name="num_products">NUMBER OF PRODUCTS</string>
+    <string name="num_sellers">NUMBER OF SELLERS</string>
+    <string name="best_seller">BEST SELLER</string>
+    <string name="product_list">PRODUCT LIST</string>
+    <string name="seller_list">SELLER LIST</string>
+    <string name="mandatory">Mandatory*</string>
+
 </resources>

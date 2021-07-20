@@ -11,18 +11,21 @@
 
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="my ads"
+        android:text="@string/my_ads"
+        android:fontFamily="@font/brawler"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:layout_marginTop="10dp"/>
-    <View
+        android:textColor="@color/blue_300"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="6dp" />
 
+    <View
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:layout_marginBottom="5dp"
-        android:background="@color/black" />
+        android:background="@color/blue_700" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/lastActivityRecyclerView"
