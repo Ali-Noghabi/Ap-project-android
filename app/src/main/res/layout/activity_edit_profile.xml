@@ -97,7 +97,7 @@
                 android:padding="10dp"
                 android:textSize="10dp" />
 
-            miriam, [20.07.21 19:20]
+
             <EditText
                 android:id="@+id/confirmPassEdit"
                 android:layout_width="match_parent"

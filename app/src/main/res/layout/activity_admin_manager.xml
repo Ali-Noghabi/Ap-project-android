@@ -94,7 +94,6 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    miriam, [20.07.21 19:18]
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -189,7 +188,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="parent">
 
-                miriam, [20.07.21 19:18]
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -281,7 +280,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="parent">
 
-                miriam, [20.07.21 19:18]
+
                 <LinearLayout
                     android:layout_width="123dp"
                     android:layout_height="wrap_content"

@@ -56,7 +56,6 @@
                 android:layout_height="wrap_content"
                 android:paddingStart="20dp"
                 android:paddingEnd="20dp"
-                app:endIconTint="clear_text"
                 app:helperText="@string/mandatory"
                 app:helperTextTextColor="@color/red">
 
@@ -77,7 +76,6 @@
                 android:layout_height="wrap_content"
                 android:paddingStart="20dp"
                 android:paddingEnd="20dp"
-                app:endIconTint="clear_text"
                 app:helperText="@string/mandatory"
                 app:helperTextTextColor="@color/red">
 
@@ -95,14 +93,13 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            miriam, [20.07.21 19:19]
+
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingStart="20dp"
                 android:paddingEnd="20dp"
-                app:endIconTint="clear_text"
                 app:helperText="@string/mandatory"
                 app:helperTextTextColor="@color/red">
 
@@ -133,7 +130,6 @@
                 app:counterMaxLength="15"
                 app:counterOverflowTextColor="@color/red"
                 app:counterTextAppearance="@color/grayDark"
-                app:endIconTint="clear_text"
                 app:helperText="@string/mandatory"
                 app:helperTextTextColor="@color/red">
 
