@@ -39,7 +39,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/username" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

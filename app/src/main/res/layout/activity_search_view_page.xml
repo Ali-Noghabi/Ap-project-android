@@ -96,7 +96,7 @@
         app:layout_anchor="@+id/nestedScrollView"
         app:layout_anchorGravity="center">
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/sortMaxtoMin"
             android:layout_width="180dp"
             android:layout_height="wrap_content"
@@ -114,7 +114,7 @@
             app:layout_constraintStart_toEndOf="@+id/sortMintoMax"
             tools:ignore="MissingConstraints" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/sortMintoMax"
             android:layout_width="180dp"
             android:layout_height="wrap_content"

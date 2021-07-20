@@ -39,7 +39,7 @@
                 android:hint="@string/category"
                 android:textColorHint="@color/grayDark"/>
 
-            <br.com.sapereaude.maskedEditText.MaskedEditText
+            <EditText
                 android:id="@+id/productname_adv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -47,18 +47,14 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="20dp"
                 android:background="@color/white"
-                android:maxLines="2"
-                app:mask="@string/name"
-                app:keep_hint="true"/>
+                android:maxLines="2" />
 
-            <br.com.sapereaude.maskedEditText.MaskedEditText
+            <EditText
                 android:id="@+id/price_adv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
-                android:background="@color/white"
-                app:mask="@string/price"
-                app:keep_hint="true"/>
+                android:background="@color/white" />
 
 
             <View
@@ -71,7 +67,7 @@
                 android:background="@color/gray" />
 
 
-            <br.com.sapereaude.maskedEditText.MaskedEditText
+            <EditText
                 android:id="@+id/description_av"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -80,8 +76,7 @@
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="20dp"
                 android:background="@color/white"
-                app:mask="@string/description"
-                app:keep_hint="true"/>
+                android:hint="@string/description"/>
 
 
         </LinearLayout>

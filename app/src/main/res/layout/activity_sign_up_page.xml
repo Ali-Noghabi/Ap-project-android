@@ -60,7 +60,6 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:endIconTint="clear_text"
                 app:helperText="@string/mandatory"
                 app:helperTextTextColor="@color/red"
                 android:paddingStart="20dp"
@@ -81,7 +80,6 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:endIconTint="clear_text"
                 app:helperText="@string/mandatory"
                 app:helperTextTextColor="@color/red"
                 android:paddingStart="20dp"
@@ -105,7 +103,6 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:endIconTint="clear_text"
                 app:helperText="@string/mandatory"
                 app:helperTextTextColor="@color/red"
                 android:paddingStart="20dp"
@@ -132,7 +129,6 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:endIconTint="clear_text"
                 app:helperText="@string/mandatory"
                 app:helperTextTextColor="@color/red"
                 android:paddingStart="20dp"

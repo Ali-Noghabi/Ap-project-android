@@ -40,7 +40,7 @@ tools:context=".AddProduct">
             android:textColor="@color/grayDark"/>
 
 
-        <br.com.sapereaude.maskedEditText.MaskedEditText
+        <EditText
             android:id="@+id/productname_udp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -48,18 +48,14 @@ tools:context=".AddProduct">
             android:layout_marginTop="20dp"
             android:layout_marginRight="20dp"
             android:maxLines="2"
-            android:background="@color/white"
-            app:mask="@string/name"
-            app:keep_hint="true"/>
+            android:background="@color/white" />
 
-        <br.com.sapereaude.maskedEditText.MaskedEditText
+        <EditText
             android:id="@+id/price_udp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:background="@color/white"
-            app:mask="@string/price"
-            app:keep_hint="true"/>
+            android:background="@color/white" />
 
 
         <View
@@ -72,7 +68,7 @@ tools:context=".AddProduct">
             android:background="@color/gray" />
 
 
-        <br.com.sapereaude.maskedEditText.MaskedEditText
+        <EditText
             android:id="@+id/description_udp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -80,9 +76,7 @@ tools:context=".AddProduct">
             android:layout_marginTop="5dp"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="20dp"
-            android:background="@color/white"
-            app:mask="@string/description"
-            app:keep_hint="true"/>
+            android:background="@color/white" />
 
 
     </LinearLayout>
