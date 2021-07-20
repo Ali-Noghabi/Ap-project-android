@@ -111,7 +111,7 @@
     <string name="lowest_price">LOWEST PRICE</string>
     <string name="highest_price">HIGHEST PRICE</string>
     <string name="welcome_to_dikan">WELCOME TO DIKAN</string>
-    <string  name="forget_password">FORGET PASSWORD?</string>
+    <string name="forget_password">FORGET PASSWORD?</string>
     <string name="login">LOGIN</string>
     <string name="category">category</string>
     <string name="name">name:</string>

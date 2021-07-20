@@ -35,6 +35,7 @@ public class UpdateDeleteProduct extends AppCompatActivity {
     int SELECT_PICTURE = 200;
     public ImageView editImage;
     public static Activity activity;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,14 +56,14 @@ public class UpdateDeleteProduct extends AppCompatActivity {
         updateProduct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                editProduct();
+                editProduct(product.getIntExtra("PRO_ID", -1));
             }
         });
         deleteProduct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                deleteProduct(product.getIntExtra("PRO_ID" ,-1));
+                deleteProduct(product.getIntExtra("PRO_ID", -1));
             }
         });
         editImage.setOnClickListener(new View.OnClickListener() {
@@ -74,13 +75,13 @@ public class UpdateDeleteProduct extends AppCompatActivity {
 
     }
 
-    private void editProduct() {
+    private void editProduct(int ID) {
 
 
         JsonObject obj1 = new JsonObject();
-        MaskedEditText editSubject = findViewById(R.id.productname_udp);
-        MaskedEditText editDes = findViewById(R.id.description_udp);
-        MaskedEditText editPrice = findViewById(R.id.price_udp);
+        EditText editSubject = findViewById(R.id.productname_udp);
+        EditText editDes = findViewById(R.id.description_udp);
+        EditText editPrice = findViewById(R.id.price_udp);
 
 
         editImage.buildDrawingCache();
@@ -97,7 +98,7 @@ public class UpdateDeleteProduct extends AppCompatActivity {
         obj1.addProperty("price", editPrice.getText().toString());
         obj1.addProperty("image", img_str);
 
-        obj1.addProperty("ID", 12);
+        obj1.addProperty("ID", ID);
 
         Call<JsonObject> call = mainAPI.editPro(obj1);
         call.enqueue(new Callback<JsonObject>() {
@@ -133,63 +134,93 @@ public class UpdateDeleteProduct extends AppCompatActivity {
 
     private void deleteProduct(int ID) {
 
+        Call<Boolean> call = mainAPI.deleteProduct(ID);
+        call.enqueue(new Callback<Boolean>() {
+            @Override
+            public void onResponse(Call<Boolean> call, Response<Boolean> response) {
+                if (response.isSuccessful()) {
+                    Boolean res = response.body();
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+                    if (res == true) {
 
-        builder.setTitle("هشدار");
-        builder.setMessage("آیا از حذف این محصول اطمینان دارید؟");
+                        Toast.makeText(getApplicationContext(), "Done", Toast.LENGTH_SHORT).show();
 
-        builder.setPositiveButton("بله", new DialogInterface.OnClickListener() {
-
-            public void onClick(DialogInterface dialog, int which) {
-                // Do nothing but close the dialog
-                Call<Boolean> call = mainAPI.deleteProduct(ID);
-                call.enqueue(new Callback<Boolean>() {
-                    @Override
-                    public void onResponse(Call<Boolean> call, Response<Boolean> response) {
-                        if (response.isSuccessful()) {
-                            Boolean res = response.body();
-
-                            if (res == true) {
-
-                                Toast.makeText(getApplicationContext(), "Done", Toast.LENGTH_SHORT).show();
-
-                            } else {
-                                Toast.makeText(getApplicationContext(), "Error? :)", Toast.LENGTH_SHORT).show();
-                            }
-
-                        } else {
-                            Toast.makeText(getApplicationContext(), "Error " + response.code(), Toast.LENGTH_SHORT).show();
-                        }
-
+                    } else {
+                        Toast.makeText(getApplicationContext(), "Error? :)", Toast.LENGTH_SHORT).show();
                     }
 
-                    @Override
-                    public void onFailure(Call<Boolean> call, Throwable t) {
-                        Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
-                    }
-                });
+                } else {
+                    Toast.makeText(getApplicationContext(), "Error " + response.code(), Toast.LENGTH_SHORT).show();
+                }
 
-                deleteProduct.setEnabled(false);
-                dialog.dismiss();
             }
-        });
-
-        builder.setNegativeButton("خیر", new DialogInterface.OnClickListener() {
 
             @Override
-            public void onClick(DialogInterface dialog, int which) {
-
-                // Do nothing
-                dialog.dismiss();
+            public void onFailure(Call<Boolean> call, Throwable t) {
+                Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
 
-        AlertDialog alert = builder.create();
-        alert.show();
+        deleteProduct.setEnabled(false);
+
+
+//        AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+//
+//        builder.setTitle("هشدار");
+//        builder.setMessage("آیا از حذف این محصول اطمینان دارید؟");
+//
+//        builder.setPositiveButton("بله", new DialogInterface.OnClickListener() {
+//
+//            public void onClick(DialogInterface dialog, int which) {
+//                // Do nothing but close the dialog
+//                Call<Boolean> call = mainAPI.deleteProduct(ID);
+//                call.enqueue(new Callback<Boolean>() {
+//                    @Override
+//                    public void onResponse(Call<Boolean> call, Response<Boolean> response) {
+//                        if (response.isSuccessful()) {
+//                            Boolean res = response.body();
+//
+//                            if (res == true) {
+//
+//                                Toast.makeText(getApplicationContext(), "Done", Toast.LENGTH_SHORT).show();
+//
+//                            } else {
+//                                Toast.makeText(getApplicationContext(), "Error? :)", Toast.LENGTH_SHORT).show();
+//                            }
+//
+//                        } else {
+//                            Toast.makeText(getApplicationContext(), "Error " + response.code(), Toast.LENGTH_SHORT).show();
+//                        }
+//
+//                    }
+//
+//                    @Override
+//                    public void onFailure(Call<Boolean> call, Throwable t) {
+//                        Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
+//                    }
+//                });
+//
+//                deleteProduct.setEnabled(false);
+////                dialog.dismiss();
+//            }
+//        });
+//
+//        builder.setNegativeButton("خیر", new DialogInterface.OnClickListener() {
+//
+//            @Override
+//            public void onClick(DialogInterface dialog, int which) {
+//
+//                // Do nothing
+//                dialog.dismiss();
+//            }
+//        });
+//
+//        AlertDialog alert = builder.create();
+//        alert.show();
 
 
     }
+
     void imageChooser() {
         Intent i = new Intent();
         i.setType("image/*");

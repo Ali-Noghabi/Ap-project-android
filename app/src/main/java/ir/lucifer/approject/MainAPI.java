@@ -19,6 +19,9 @@ public interface MainAPI {
     @GET("getUsers")
     Call<ArrayList<User>> getUsersList ();
 
+    @GET("AM/getBestSeller")
+    Call<JsonObject> getBestSeller();
+
     @GET("getProductsAdmin")
     Call<ArrayList<Product>> getProductListAdmin ();
 
@@ -42,6 +45,9 @@ public interface MainAPI {
 
     @POST("postUser")
     Call<JsonObject> addUser(@Body JsonObject Input);
+
+    @POST("forgetPass")
+    Call<JsonObject> forgetPass(@Body JsonObject Input);
 
     @POST("postProduct")
     Call<JsonObject> addProduct(@Body JsonObject Input);

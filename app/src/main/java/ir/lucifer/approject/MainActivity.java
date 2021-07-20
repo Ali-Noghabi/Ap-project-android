@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     public EditText password;
     public Button LoginButtonMainPage;
     public TextView signupButtonMainPage;
+    public TextView forgetPassword;
     public static Activity activity;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         password = findViewById(R.id.passwordEditTextMA);
         LoginButtonMainPage = findViewById(R.id.LoginButtonMA);
         signupButtonMainPage = findViewById(R.id.signupTextViewMA);
+        forgetPassword = findViewById(R.id.textViewforgetpass);
 
         Retrofit test2 = new Retrofit.Builder().baseUrl(Controler.url)
                 .addConverterFactory(GsonConverterFactory.create()).build();
@@ -56,6 +58,13 @@ public class MainActivity extends AppCompatActivity {
 
 //                startActivity(new Intent(activity , SignUpPage.class));
                 startActivity(new Intent(activity , SignUpPage.class));
+            }
+        });
+
+        forgetPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(activity , RecoveryPass.class));
             }
         });
 

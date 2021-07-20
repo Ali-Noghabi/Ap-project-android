@@ -64,17 +64,12 @@ public class AddProduct extends AppCompatActivity {
     }
 
     private void postProduct() {
-        ProgressDialog progress = new ProgressDialog(this);
-        progress.setTitle("Loading");
-        progress.setMessage("Wait while loading...");
-        progress.setCancelable(false); // disable dismiss by tapping outside of the dialog
-        progress.show();
 
         JsonObject obj1 = new JsonObject();
         EditText proCategory = findViewById(R.id.category_adv);
-        MaskedEditText proName = findViewById(R.id.productname_adv);
-        MaskedEditText proPrice = findViewById(R.id.price_adv);
-        MaskedEditText proDes = findViewById(R.id.description_av);
+        EditText proName = findViewById(R.id.productname_adv);
+        EditText proPrice = findViewById(R.id.price_adv);
+        EditText proDes = findViewById(R.id.description_av);
 
 
         previewImageView.buildDrawingCache();
@@ -96,7 +91,6 @@ public class AddProduct extends AppCompatActivity {
         obj1.addProperty("category" , proCategory.getText().toString());
         obj1.addProperty("isStar" , false);
 
-        progress.dismiss();
         if (proName.getText().toString().isEmpty() == false && proDes.getText().toString().isEmpty() == false && proPrice.getText().toString().isEmpty() == false) {
             Call<JsonObject> call = mainAPI.addProduct(obj1);
             call.enqueue(new Callback<JsonObject>() {

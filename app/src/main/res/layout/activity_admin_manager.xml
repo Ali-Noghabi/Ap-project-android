@@ -10,7 +10,7 @@
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="221dp"
         android:src="@drawable/adminanalyze"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteY="76dp" />
@@ -19,7 +19,8 @@
     <TableLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center">
+        android:layout_gravity="center"
+        android:layout_marginBottom="40dp">
 
         <TableRow
             android:layout_width="match_parent"
@@ -57,13 +58,12 @@
 
                     <EditText
                         android:id="@+id/sumPrices"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_margin="16dp"
-                        android:ems="10"
                         android:padding="8dp"
-                        android:textSize="8sp" />
+                        android:textSize="12sp" />
 
 
                 </LinearLayout>
@@ -106,9 +106,8 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_margin="16dp"
-                        android:ems="10"
                         android:padding="8dp"
-                        android:textSize="8sp" />
+                        android:textSize="12sp" />
 
 
                 </LinearLayout>
@@ -157,9 +156,8 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_margin="16dp"
-                        android:ems="10"
                         android:padding="8dp"
-                        android:textSize="8sp" />
+                        android:textSize="12sp" />
 
 
                 </LinearLayout>
@@ -204,10 +202,9 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_margin="16dp"
-                        android:ems="10"
                         android:inputType="textPersonName"
                         android:padding="8dp"
-                        android:textSize="8sp" />
+                        android:textSize="12sp"/>
 
 
                 </LinearLayout>
@@ -239,7 +236,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:paddingTop="40dp"
+                    android:paddingTop="25dp"
                     android:paddingBottom="40dp">
 
                     <TextView
@@ -277,7 +274,7 @@
                     android:layout_width="123dp"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:paddingTop="40dp"
+                    android:paddingTop="25dp"
                     android:paddingBottom="40dp">
 
                     <TextView

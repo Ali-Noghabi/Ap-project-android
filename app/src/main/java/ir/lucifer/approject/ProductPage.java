@@ -88,55 +88,81 @@ public class ProductPage extends AppCompatActivity {
                 JsonObject obj1 = new JsonObject();
                 obj1.addProperty("productID", Integer.toString(proID));
                 obj1.addProperty("buyerToken", Controler.Token);
-                AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+//                AlertDialog.Builder builder = new AlertDialog.Builder(activity);
 
-                builder.setTitle("هشدار");
-                builder.setMessage("آیا از خرید این محصول اطمینان دارید؟");
+                Call<JsonObject> call = mainAPI.buyProduct(obj1);
+                call.enqueue(new Callback<JsonObject>() {
+                    @Override
+                    public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
+                        if (response.isSuccessful()) {
+                            JsonObject obj = response.body();
 
-                builder.setPositiveButton("بله", new DialogInterface.OnClickListener() {
-
-                    public void onClick(DialogInterface dialog, int which) {
-                        // Do nothing but close the dialog
-                        Call<JsonObject> call = mainAPI.buyProduct(obj1);
-                        call.enqueue(new Callback<JsonObject>() {
-                            @Override
-                            public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
-                                if (response.isSuccessful()) {
-                                    JsonObject obj = response.body();
-
-                                    if (obj.get("code").getAsInt() == 200) {
-                                        Toast.makeText(getApplicationContext(), "You buy this Item Successfully with UserName:" + obj.get("buyerID").getAsString(), Toast.LENGTH_SHORT).show();
-                                    } else {
-                                        Toast.makeText(getApplicationContext(), obj.get("msg").getAsString(), Toast.LENGTH_SHORT).show();
-                                    }
-                                } else {
-                                    Toast.makeText(getApplicationContext(), "Error " + response.code(), Toast.LENGTH_SHORT).show();
-                                }
-
+                            if (obj.get("code").getAsInt() == 200) {
+                                Toast.makeText(getApplicationContext(), "You buy this Item Successfully with UserName:" + obj.get("buyerID").getAsString(), Toast.LENGTH_SHORT).show();
+                            } else {
+                                Toast.makeText(getApplicationContext(), obj.get("msg").getAsString(), Toast.LENGTH_SHORT).show();
                             }
+                        } else {
+                            Toast.makeText(getApplicationContext(), "Error " + response.code(), Toast.LENGTH_SHORT).show();
+                        }
 
-                            @Override
-                            public void onFailure(Call<JsonObject> call, Throwable t) {
-                                Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
-                            }
-                        });
-                        addProduct.setEnabled(false);
-                        dialog.dismiss();
                     }
-                });
-
-                builder.setNegativeButton("خیر", new DialogInterface.OnClickListener() {
 
                     @Override
-                    public void onClick(DialogInterface dialog, int which) {
-
-                        // Do nothing
-                        dialog.dismiss();
+                    public void onFailure(Call<JsonObject> call, Throwable t) {
+                        Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
+                addProduct.setEnabled(false);
+//                dialog.dismiss();
 
-                AlertDialog alert = builder.create();
-                alert.show();
+//                builder.setTitle("warning");
+//                builder.setMessage("Are you sure to buy this item?");
+//
+//                builder.setPositiveButton("yes", new DialogInterface.OnClickListener() {
+//
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        // Do nothing but close the dialog
+//                        Call<JsonObject> call = mainAPI.buyProduct(obj1);
+//                        call.enqueue(new Callback<JsonObject>() {
+//                            @Override
+//                            public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
+//                                if (response.isSuccessful()) {
+//                                    JsonObject obj = response.body();
+//
+//                                    if (obj.get("code").getAsInt() == 200) {
+//                                        Toast.makeText(getApplicationContext(), "You buy this Item Successfully with UserName:" + obj.get("buyerID").getAsString(), Toast.LENGTH_SHORT).show();
+//                                    } else {
+//                                        Toast.makeText(getApplicationContext(), obj.get("msg").getAsString(), Toast.LENGTH_SHORT).show();
+//                                    }
+//                                } else {
+//                                    Toast.makeText(getApplicationContext(), "Error " + response.code(), Toast.LENGTH_SHORT).show();
+//                                }
+//
+//                            }
+//
+//                            @Override
+//                            public void onFailure(Call<JsonObject> call, Throwable t) {
+//                                Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
+//                            }
+//                        });
+//                        addProduct.setEnabled(false);
+//                        dialog.dismiss();
+//                    }
+//                });
+//
+//                builder.setNegativeButton("no", new DialogInterface.OnClickListener() {
+//
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int which) {
+//
+//                        // Do nothing
+//                        dialog.dismiss();
+//                    }
+//                });
+//
+//                AlertDialog alert = builder.create();
+//                alert.show();
 
             }
         });
