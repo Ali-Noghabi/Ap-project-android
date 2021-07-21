@@ -12,7 +12,7 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="768dp"
-        android:layout_height="255dp"
+        android:layout_height="200dp"
         android:layout_marginLeft="-140dp"
         android:layout_alignParentTop="true"
         app:srcCompat="@drawable/secondregister" />
@@ -31,7 +31,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
-        android:layout_marginBottom="90dp"
+        android:layout_marginBottom="60dp"
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="20dp">
 
@@ -45,19 +45,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="12dp"
-                android:layout_marginBottom="12dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
                 android:text="@string/create_new_account"
                 android:textSize="16dp" />
 
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingStart="20dp"
-                android:paddingEnd="20dp"
-                app:helperText="@string/mandatory"
-                app:helperTextTextColor="@color/red">
 
                 <EditText
                     android:id="@+id/name"
@@ -65,19 +57,12 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/edittext"
                     android:hint="@string/UserName"
+                    android:layout_margin="16dp"
                     android:imeOptions="actionNext"
                     android:inputType="textPersonName"
+                    android:padding="10dp"
                     android:textSize="10dp" />
-            </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingStart="20dp"
-                android:paddingEnd="20dp"
-                app:helperText="@string/mandatory"
-                app:helperTextTextColor="@color/red">
 
                 <EditText
                     android:id="@+id/usernameSignup"
@@ -85,23 +70,11 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/edittext"
                     android:ems="10"
+                    android:layout_margin="16dp"
                     android:hint="email"
                     android:inputType="textEmailAddress"
-                    android:padding="10dp"
+                   android:padding="10dp"
                     android:textSize="10dp" />
-
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingStart="20dp"
-                android:paddingEnd="20dp"
-                app:helperText="@string/mandatory"
-                app:helperTextTextColor="@color/red">
 
 
                 <EditText
@@ -110,28 +83,13 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/edittext"
                     android:ems="10"
+                    android:layout_margin="16dp"
                     android:hint="@string/phone_num"
                     android:imeOptions="actionNext"
                     android:inputType="phone"
                     android:padding="10dp"
                     android:textSize="10dp" />
 
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingStart="20dp"
-                android:paddingEnd="20dp"
-                app:counterEnabled="true"
-                app:counterMaxLength="15"
-                app:counterOverflowTextColor="@color/red"
-                app:counterTextAppearance="@color/grayDark"
-                app:helperText="@string/mandatory"
-                app:helperTextTextColor="@color/red">
 
                 <EditText
 
@@ -140,13 +98,12 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/edittext"
                     android:ems="10"
+                    android:layout_margin="16dp"
                     android:hint="@string/password"
                     android:imeOptions="actionNext"
                     android:inputType="textPassword"
                     android:padding="10dp"
                     android:textSize="10dp" />
-
-            </com.google.android.material.textfield.TextInputLayout>
 
             <EditText
                 android:id="@+id/confirmPassword"
